@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 
 class SearchingTootorPage extends StatelessWidget{
+
+  String funcion;
+  SearchingTootorPage({this.funcion});
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -34,7 +38,7 @@ class SearchingTootorPage extends StatelessWidget{
                   ),
                 ),
                 SizedBox(height: 20,),
-                Text("Buscando usuarios con las habilidades necesarias para ayudarte con tu duda.", style: TextStyle(fontSize: width-345)),
+                Text("Buscando usuarios con las habilidades necesarias para ${this.funcion}.", style: TextStyle(fontSize: width-345)),
                 SizedBox(height: 20,),
                 Text("Esto puede tardar un poco.", )
               ],

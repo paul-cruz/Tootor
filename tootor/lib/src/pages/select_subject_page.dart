@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:tootor/src/behaviors/hiddenScrollBehovior.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 
-import '../utils/customized_colors.dart';
-import '../utils/customized_colors.dart';
-import '../utils/customized_colors.dart';
-import '../utils/customized_colors.dart';
-import '../utils/customized_colors.dart';
-
 class SelectSubjectPage extends StatelessWidget{
+  final Function onSubjectSelected;
+  SelectSubjectPage({this.onSubjectSelected});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +25,8 @@ class SelectSubjectPage extends StatelessWidget{
                 ),
                 GestureDetector(
                   onTap: (){
-                    print("Subject selected");
+                    this.onSubjectSelected("Algebra lineal");
+                    Navigator.of(context).pop();
                   },
                   child: Container(
                     padding: EdgeInsets.only(top: 20, bottom: 20),
@@ -41,7 +39,8 @@ class SelectSubjectPage extends StatelessWidget{
                 ),
                 GestureDetector(
                   onTap: (){
-                    print("Subject selected");
+                    this.onSubjectSelected("Teoria computacional");
+                    Navigator.of(context).pop();
                   },
                   child: Container(
                     padding: EdgeInsets.only(top: 20, bottom: 20),
@@ -54,7 +53,8 @@ class SelectSubjectPage extends StatelessWidget{
                 ),
                 GestureDetector(
                   onTap: (){
-                    print("Subject selected");
+                    this.onSubjectSelected("Sistemas digitales");
+                    Navigator.of(context).pop();
                   },
                   child: Container(
                     padding: EdgeInsets.only(top: 20, bottom: 20),

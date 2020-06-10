@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 
-import '../utils/customized_colors.dart';
-import '../utils/customized_colors.dart';
-
 class TootorFoundPage extends StatelessWidget{
+  String funcion;
+  TootorFoundPage({this.funcion});
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -40,7 +39,7 @@ class TootorFoundPage extends StatelessWidget{
                 Text("Name", style: TextStyle(fontSize: width-340)),
                 //TODO: Get tutor's name from DB
                 SizedBox(height: 20,),
-                Text("Encontramos un tutor con las habilidades para ayudarte con tu duda.", style: TextStyle(fontSize: width-345)),
+                Text("Encontramos un tutor con las habilidades para ${this.funcion}", style: TextStyle(fontSize: width-345), textAlign: TextAlign.center,),
                 SizedBox(height: 20,),
               ],
             ),
