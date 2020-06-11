@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 import 'package:tootor/src/pages/signin_page.dart';
-
+import 'package:tootor/src/widgets/tootor_bottom_navigation_bar.dart';
 class ProfilePage extends StatefulWidget {
   ProfilePage({Key key}) : super(key: key);
 
@@ -17,6 +17,7 @@ class _ProfileState extends State<ProfilePage> {
       appBar: AppBar(
         title: Center(child: Text("Perfil y ajustes")),
       ),
+      bottomNavigationBar:TootorBottomNavigationBar(),
       body: Container(
         padding: EdgeInsets.all(20.0),
         child: Center(
