@@ -22,11 +22,7 @@ class _EnterDoubtPageState extends State<EnterDoubtPage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double heightScreen = MediaQuery.of(context).size.height;
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("Ingresa tu duda o consulta")),
-      ),
-      body: Container(
+    return Container(
           padding: EdgeInsets.all(20.0),
           child: Center(
             child: ListView(
@@ -115,8 +111,7 @@ class _EnterDoubtPageState extends State<EnterDoubtPage> {
             ]
             ),
           )
-      ),
-    );
+      );
   }
 }
 

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
+import 'package:tootor/src/widgets/tootor_notification.dart';
+import 'package:tootor/src/pages/help_requested_page.dart';
 
 class NotificationsPage extends StatefulWidget {
   @override
@@ -7,14 +9,13 @@ class NotificationsPage extends StatefulWidget {
 }
 
 class _NotificationsPageState extends State<NotificationsPage> {
+
+  String name = "Juanito"; // this will be filled by data of DB
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("Notificaciones")),
-      ),
-      body: Container(
+    return Container(
           padding: EdgeInsets.all(20.0),
           child: Center(
             child: Column(
@@ -23,30 +24,13 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   height: 1,
                   color: CustomColors.divider_gray,
                 ),
+                //Place a for loop for all the notifications
                 GestureDetector(
                   onTap: (){
                     print("Notificación pulsada");
+                    Navigator.of(context).push(MaterialPageRoute(builder:(context)=>HelpRequestedPage(name: this.name)));
                   },
-                  child: Container(
-                    padding: EdgeInsets.only(top: 20, bottom: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Name tiene una duda y tus \nhabilidades pueden ayudarlo", style: TextStyle(fontSize: width-345)),
-                            SizedBox(height: 10,),
-                            Text("Materia: Algebra lineal",style: TextStyle(fontSize: width-350)),
-                            Text("Tema: Transformaciones lineales",style: TextStyle(fontSize: width-350 ))
-                          ],
-                        ),
-                        Icon(
-                          Icons.arrow_forward_ios,
-                        )
-                      ],
-                    ),
-                  ),
+                  child: TootorNotification(name: this.name, subject: "Algebra lineal", topic: "Transformaciones lineales"),
                 ),
                 Divider(
                   height: 1,
@@ -55,7 +39,6 @@ class _NotificationsPageState extends State<NotificationsPage> {
               ],
             ),
           )
-      ),
-    );
+      );
   }
 }

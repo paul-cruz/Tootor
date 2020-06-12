@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 
 class HelpRequestedPage extends StatelessWidget {
+
+  String name;
+  HelpRequestedPage({this.name});
+
   @override
   Widget build(BuildContext context) {
     double widthScreen = MediaQuery.of(context).size.width;
@@ -40,8 +44,8 @@ class HelpRequestedPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 10,),
-                  Text("Name requiere ayuda \ncon el siguiente \nproblema",
-                    style: TextStyle(fontSize: widthScreen-342, color: Colors.white),
+                  Text("${this.name} requiere \nayuda con el \nsiguiente problema",
+                    style: TextStyle(fontSize: widthScreen-345, color: Colors.white),
                     textAlign: TextAlign.start,
                   ),
                 ],
