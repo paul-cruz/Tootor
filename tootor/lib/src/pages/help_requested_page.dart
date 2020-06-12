@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
+import 'package:tootor/src/pages/chat_solving_page.dart';
 
 class HelpRequestedPage extends StatelessWidget {
 
@@ -79,7 +80,7 @@ class HelpRequestedPage extends StatelessWidget {
                 ),
                 FlatButton(
                   onPressed: () {
-
+                    Navigator.push(context, MaterialPageRoute(builder:(context)=>ChatSolving(name: this.name, role: "Ayudando a ",)));
                   },
                   color: CustomColors.secondary,
                   child: Text('¡Vamos!', style: TextStyle(fontSize: widthScreen-345, color: Colors.white),),
