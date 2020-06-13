@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "210523199226",
+    "firebase_url": "https://tootor.firebaseio.com",
+    "project_id": "tootor",
+    "storage_bucket": "tootor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210523199226:android:97688a75aa452610cddb43",
+        "android_client_info": {
+          "package_name": "io.paulcruz.tootor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210523199226-72sd3r50dbb9j6igfmigu9t6us7pfc5b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdz1sLCaWUMt3MJJRTFjx329jRDU7W1YY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210523199226-72sd3r50dbb9j6igfmigu9t6us7pfc5b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
