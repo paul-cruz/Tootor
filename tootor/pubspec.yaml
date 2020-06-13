@@ -24,6 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   
+  firebase_auth: ^0.16.1
+
   flutter_svg: ^0.17.4
 
 
