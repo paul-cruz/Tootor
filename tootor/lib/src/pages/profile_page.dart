@@ -1,7 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 import 'package:tootor/src/pages/signin_page.dart';
-import 'file:///C:/Users/MAIH_/AndroidStudioProjects/Tootor/tootor/lib/src/pages/main_navegation_page.dart';
+
 class ProfilePage extends StatefulWidget {
   ProfilePage({Key key}) : super(key: key);
 
@@ -10,6 +11,13 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfileState extends State<ProfilePage> {
+  double _fontSize = 20;
+
+  _signout() async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacementNamed('/signin');
+  }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -20,7 +28,7 @@ class _ProfileState extends State<ProfilePage> {
             children: <Widget>[
               CircleAvatar(
                 backgroundColor: CustomColors.gray,
-                radius: width-290,
+                radius: width - 290,
                 child: Container(
                   margin: EdgeInsets.all(25),
                   width: 200,
@@ -40,27 +48,24 @@ class _ProfileState extends State<ProfilePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text("Name", style: TextStyle(fontSize: width-340)),
+                  Text("Name", style: TextStyle(fontSize: 30)),
                   SizedBox(width: 10),
                   Icon(
                     Icons.edit,
                     color: Colors.blue,
-                    size: width-330,
+                    size: 30,
                   )
                 ],
               ),
               SizedBox(
-                height: 20,
+                height: 40,
               ),
               Divider(
                 color: CustomColors.divider_gray,
                 height: 1,
               ),
-              SizedBox(
-                height: 20,
-              ),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   print("Ver habilidades");
                   //TODO: Push "Habilidades" Screen
                 },
@@ -69,25 +74,23 @@ class _ProfileState extends State<ProfilePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Editar Habilidades", style: TextStyle(fontSize: width-340, color: CustomColors.font_gray),),
+                      Text(
+                        "Editar Habilidades",
+                        style: TextStyle(
+                            fontSize: _fontSize, color: CustomColors.font_gray),
+                      ),
                       Icon(
                         Icons.arrow_forward_ios,
                         color: Colors.black,
-                        size: width-330,
+                        size: _fontSize,
                       )
                     ],
                   ),
                 ),
               ),
-              Divider(
-                height: 1,
-                color: CustomColors.divider_gray
-              ),
-              SizedBox(
-                height: 20,
-              ),
+              Divider(height: 1, color: CustomColors.divider_gray),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   print("Ver configuración");
                   //TODO: Push "Configuración" Screen
                 },
@@ -96,11 +99,15 @@ class _ProfileState extends State<ProfilePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Configuración General", style: TextStyle(fontSize: width-340, color: CustomColors.font_gray),),
+                      Text(
+                        "Configuración General",
+                        style: TextStyle(
+                            fontSize: _fontSize, color: CustomColors.font_gray),
+                      ),
                       Icon(
                         Icons.arrow_forward_ios,
                         color: Colors.black,
-                        size: width-330,
+                        size: _fontSize,
                       )
                     ],
                   ),
@@ -114,28 +121,25 @@ class _ProfileState extends State<ProfilePage> {
                 height: 20,
               ),
               GestureDetector(
-                onTap: (){
-                  print("Cerrar sesión");
-                  //TODO: Cerrar sesión
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => SignInPage()),
-                    (Route<dynamic> route) => false,
-                  );
+                onTap: () {
+                  _signout();
                 },
                 child: Container(
                   padding: EdgeInsets.only(top: 10, bottom: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Cerrar Sesión", style: TextStyle(fontSize: width-340, color: CustomColors.red),),
+                      Text(
+                        "Cerrar Sesión",
+                        style: TextStyle(
+                            fontSize: _fontSize, color: CustomColors.red),
+                      ),
                     ],
                   ),
                 ),
               ),
             ],
           ),
-        )
-      );
+        ));
   }
 }
