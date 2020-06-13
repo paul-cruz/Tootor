@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tootor/src/behaviors/hiddenScrollBehovior.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 
@@ -19,7 +21,84 @@ class _SignInPageState extends State<SignInPage> {
 
   String _email, _password;
 
-  _login_in() async {
+  _googleLogIn() async {
+    if (_isLoggingIn) return;
+    setState(() {
+      _isLoggingIn = true;
+    });
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Iniciando Sesion...'),
+    ));
+
+    try {
+      GoogleSignInAccount googleSignInAccount = await GoogleSignIn().signIn();
+      GoogleSignInAuthentication googleSignInAuth =
+          await googleSignInAccount.authentication;
+
+      AuthCredential credential = GoogleAuthProvider.getCredential(
+          idToken: googleSignInAuth.idToken,
+          accessToken: googleSignInAuth.accessToken);
+
+      await FirebaseAuth.instance.signInWithCredential(credential);
+      Navigator.of(context).pushReplacementNamed('/home');
+    } on Exception catch (e) {
+      _scaffoldKey.currentState.hideCurrentSnackBar();
+      _scaffoldKey.currentState.showSnackBar(SnackBar(
+        content: Text(e.toString()),
+        duration: Duration(seconds: 30),
+        action: SnackBarAction(
+          label: 'Dismiss',
+          onPressed: () {
+            _scaffoldKey.currentState.hideCurrentSnackBar();
+          },
+        ),
+      ));
+    } finally {
+      setState(() {
+        _isLoggingIn = false;
+      });
+    }
+  }
+
+  _facebookLogIn() async {
+    if (_isLoggingIn) return;
+    setState(() {
+      _isLoggingIn = true;
+    });
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Iniciando Sesion...'),
+    ));
+
+    try {
+      final FacebookLoginResult result = await FacebookLogin().logIn(['email']);
+      if (result.status != FacebookLoginStatus.loggedIn) return null;
+      final AuthCredential credential = FacebookAuthProvider.getCredential(
+        accessToken: result.accessToken.token,
+      );
+      await FirebaseAuth.instance.signInWithCredential(credential);
+      Navigator.of(context).pushReplacementNamed('/home');
+    } on Exception catch (e) {
+      _scaffoldKey.currentState.hideCurrentSnackBar();
+      _scaffoldKey.currentState.showSnackBar(SnackBar(
+        content: Text(e.toString()),
+        duration: Duration(seconds: 30),
+        action: SnackBarAction(
+          label: 'Dismiss',
+          onPressed: () {
+            _scaffoldKey.currentState.hideCurrentSnackBar();
+          },
+        ),
+      ));
+    } finally {
+      setState(() {
+        _isLoggingIn = false;
+      });
+    }
+  }
+
+  _loginin() async {
     if (_isLoggingIn) return;
     setState(() {
       _isLoggingIn = true;
@@ -146,7 +225,7 @@ class _SignInPageState extends State<SignInPage> {
                       borderRadius: BorderRadius.circular(13.0),
                     ),
                     onPressed: () {
-                      _login_in();
+                      _loginin();
                     },
                     textColor: Colors.white,
                     color: CustomColors.secondary,
@@ -161,7 +240,9 @@ class _SignInPageState extends State<SignInPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     RawMaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _googleLogIn();
+                      },
                       elevation: 2.0,
                       fillColor: Colors.white,
                       child: SvgPicture.asset(
@@ -172,7 +253,9 @@ class _SignInPageState extends State<SignInPage> {
                       shape: CircleBorder(),
                     ),
                     RawMaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _facebookLogIn();
+                      },
                       elevation: 2.0,
                       child: SvgPicture.asset(
                         'assets/facebook.svg',
