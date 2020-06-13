@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tootor/src/behaviors/hiddenScrollBehovior.dart';
@@ -11,13 +12,67 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final _formKey = GlobalKey<FormState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  bool _isRegistering = false;
   String _email, _password, _username;
+
+  _register() async {
+    if (_isRegistering) return;
+    setState(() {
+      _isRegistering = true;
+    });
+
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text('Registrando usuario...'),
+    ));
+
+    final form = _formKey.currentState;
+
+    if (!form.validate()) {
+      _scaffoldKey.currentState.hideCurrentSnackBar();
+
+      setState(() {
+        _isRegistering = false;
+      });
+    }
+
+    form.save();
+
+    try {
+      await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: _email, password: _password);
+      Navigator.of(context).pop();
+      Navigator.of(context).pushReplacementNamed('/home');
+    } on Exception catch (e) {
+      _scaffoldKey.currentState.hideCurrentSnackBar();
+      _scaffoldKey.currentState.showSnackBar(SnackBar(
+        content: Text(e.toString()),
+        duration: Duration(seconds: 30),
+        action: SnackBarAction(
+          label: 'Dismiss',
+          onPressed: () {
+            _scaffoldKey.currentState.hideCurrentSnackBar();
+          },
+        ),
+      ));
+    } finally {
+      setState(() {
+        _isRegistering = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
-        leading: IconButton(icon: Icon(Icons.arrow_back_ios),onPressed: () => Navigator.pop(context),),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: () => Navigator.pop(context),
+        ),
         centerTitle: true,
         title: Text("Registro"),
       ),
@@ -26,6 +81,7 @@ class _SignUpPageState extends State<SignUpPage> {
         child: ScrollConfiguration(
           behavior: HiddenScrollBehavior(),
           child: Form(
+            key: _formKey,
             child: ListView(
               physics: NeverScrollableScrollPhysics(),
               children: <Widget>[
@@ -52,15 +108,51 @@ class _SignUpPageState extends State<SignUpPage> {
                   keyboardType: TextInputType.text,
                   textCapitalization: TextCapitalization.words,
                   decoration: InputDecoration(labelText: 'Nombre de usuario'),
+                  validator: (val) {
+                    if (val.isEmpty) {
+                      return 'Por favor ingresa un nombre de usuario';
+                    } else {
+                      return null;
+                    }
+                  },
+                  onSaved: (val) {
+                    setState(() {
+                      _username = val;
+                    });
+                  },
                 ),
                 TextFormField(
                   autocorrect: false,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(labelText: 'Correo'),
+                  validator: (val) {
+                    if (val.isEmpty) {
+                      return 'Por favor ingresa un correo valido';
+                    } else {
+                      return null;
+                    }
+                  },
+                  onSaved: (val) {
+                    setState(() {
+                      _email = val;
+                    });
+                  },
                 ),
                 TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(labelText: 'Contraseña'),
+                  validator: (val) {
+                    if (val.isEmpty) {
+                      return 'Por favor ingresa una contraseña correcta';
+                    } else {
+                      return null;
+                    }
+                  },
+                  onSaved: (val) {
+                    setState(() {
+                      _password = val;
+                    });
+                  },
                 ),
                 SizedBox(
                   height: 20,
@@ -71,7 +163,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(13.0),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      _register();
+                    },
                     textColor: Colors.white,
                     color: CustomColors.secondary,
                     child: const Text('¡Crea tu cuenta!',
