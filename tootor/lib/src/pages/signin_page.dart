@@ -145,8 +145,13 @@ class _SignInPageState extends State<SignInPage> {
 
   @override
   Widget build(BuildContext context) {
+    /*double screenHeight = MediaQuery.of(context).size.height -
+        MediaQuery.of(context).padding.top -
+        AppBar().preferredSize.height;*/
+
     return Scaffold(
       key: _scaffoldKey,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Center(child: Text("Tootor")),
       ),
@@ -156,122 +161,136 @@ class _SignInPageState extends State<SignInPage> {
           behavior: HiddenScrollBehavior(),
           child: Form(
             key: _formKey,
-            child: ListView(
-              physics: NeverScrollableScrollPhysics(),
+            child: Column(
               children: <Widget>[
-                Center(
-                  child: Text(
-                    '¡Bienvenido!',
-                    style: TextStyle(
-                      fontSize: 30.0,
+                Expanded(
+                  flex: 1,
+                  child: Center(
+                    child: Text(
+                      '¡Bienvenido!',
+                      style: TextStyle(
+                        fontSize: 30.0,
+                      ),
                     ),
                   ),
                 ),
-                CircleAvatar(
-                  backgroundColor: CustomColors.secondary,
-                  radius: 120,
-                  child: Container(
-                    margin: EdgeInsets.all(25),
-                    width: 200,
-                    height: 200,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: AssetImage('assets/logo.png'),
-                          fit: BoxFit.contain),
+                Expanded(
+                  flex: 5,
+                  child: CircleAvatar(
+                    backgroundColor: CustomColors.secondary,
+                    radius: 120,
+                    child: Container(
+                      margin: EdgeInsets.all(25),
+                      width: 200,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage('assets/logo.png'),
+                            fit: BoxFit.contain),
+                      ),
                     ),
                   ),
                 ),
-                TextFormField(
-                  autocorrect: false,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(labelText: 'Correo'),
-                  validator: (val) {
-                    if (val.isEmpty) {
-                      return 'Por favor ingresa un correo valido';
-                    } else {
-                      return null;
-                    }
-                  },
-                  onSaved: (val) {
-                    setState(() {
-                      _email = val;
-                    });
-                  },
-                ),
-                TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(labelText: 'Contraseña'),
-                  validator: (val) {
-                    if (val.isEmpty) {
-                      return 'Por favor ingresa una contraseña correcta';
-                    } else {
-                      return null;
-                    }
-                  },
-                  onSaved: (val) {
-                    setState(() {
-                      _password = val;
-                    });
-                  },
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                ButtonTheme(
-                  height: 50.0,
-                  child: RaisedButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(13.0),
-                    ),
-                    onPressed: () {
-                      _loginin();
+                Expanded(
+                  flex: 2,
+                  child: TextFormField(
+                    autocorrect: false,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(labelText: 'Correo'),
+                    validator: (val) {
+                      if (val.isEmpty) {
+                        return 'Por favor ingresa un correo valido';
+                      } else {
+                        return null;
+                      }
                     },
-                    textColor: Colors.white,
-                    color: CustomColors.secondary,
-                    child: const Text('Iniciar Sesion',
-                        style: TextStyle(fontSize: 20)),
+                    onSaved: (val) {
+                      setState(() {
+                        _email = val;
+                      });
+                    },
                   ),
                 ),
-                SizedBox(
-                  height: 5,
+                Expanded(
+                  flex: 2,
+                  child: TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(labelText: 'Contraseña'),
+                    validator: (val) {
+                      if (val.isEmpty) {
+                        return 'Por favor ingresa una contraseña correcta';
+                      } else {
+                        return null;
+                      }
+                    },
+                    onSaved: (val) {
+                      setState(() {
+                        _password = val;
+                      });
+                    },
+                  ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    RawMaterialButton(
-                      onPressed: () {
-                        _googleLogIn();
-                      },
-                      elevation: 2.0,
-                      fillColor: Colors.white,
-                      child: SvgPicture.asset(
-                        'assets/google.svg',
-                        width: 40.0,
+                Expanded(
+                  flex: 1,
+                  child: ButtonTheme(
+                    minWidth: double.infinity,
+                    child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(13.0),
                       ),
-                      padding: EdgeInsets.all(15.0),
-                      shape: CircleBorder(),
-                    ),
-                    RawMaterialButton(
                       onPressed: () {
-                        _facebookLogIn();
+                        _loginin();
                       },
-                      elevation: 2.0,
-                      child: SvgPicture.asset(
-                        'assets/facebook.svg',
-                        width: 70.0,
-                      ),
-                      padding: EdgeInsets.all(15.0),
-                      shape: CircleBorder(),
+                      textColor: Colors.white,
+                      color: CustomColors.secondary,
+                      child: const Text('Iniciar Sesion',
+                          style: TextStyle(fontSize: 20)),
                     ),
-                  ],
+                  ),
                 ),
-                FlatButton(
-                  textColor: CustomColors.secondary,
-                  child: Text('Olvidé mi contraseña'),
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/forgotpasswd');
-                  },
+                Expanded(
+                  flex: 2,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      RawMaterialButton(
+                        onPressed: () {
+                          _googleLogIn();
+                        },
+                        elevation: 2.0,
+                        fillColor: Colors.white,
+                        child: SvgPicture.asset(
+                          'assets/google.svg',
+                          width: 30.0,
+                        ),
+                        padding: EdgeInsets.all(15.0),
+                        shape: CircleBorder(),
+                      ),
+                      RawMaterialButton(
+                        onPressed: () {
+                          _facebookLogIn();
+                        },
+                        elevation: 2.0,
+                        child: SvgPicture.asset(
+                          'assets/facebook.svg',
+                          width: 70.0,
+                        ),
+                        padding: EdgeInsets.all(15.0),
+                        shape: CircleBorder(),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: FlatButton(
+                    textColor: CustomColors.secondary,
+                    child: Text('Olvidé mi contraseña'),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/forgotpasswd');
+                    },
+                  ),
                 )
               ],
             ),
