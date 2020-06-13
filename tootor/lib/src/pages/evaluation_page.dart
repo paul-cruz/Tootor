@@ -7,20 +7,21 @@ class EvaluationPage extends StatefulWidget {
 
 class _EvaluationPageState extends State<EvaluationPage> {
 
-  List<Color> starColors = new List(5);
-  List<IconData> starIcon = new List(5);
-  int stars;
+  List<Color> _starColors = new List(5);
+  List<IconData> _starIcon = new List(5);
+  int _stars;
+  double _fontSize;
 
   @override
   void initState(){
     super.initState();
-    this.stars = -1;
+    this._stars = -1;
     for(int i = 0 ; i < 5 ; i++){
-      this.starColors[i] = Colors.black;
+      this._starColors[i] = Colors.black;
     }
 
     for(int i = 0 ; i < 5 ; i++){
-      this.starIcon[i] = Icons.star_border;
+      this._starIcon[i] = Icons.star_border;
     }
   }
 
@@ -38,9 +39,9 @@ class _EvaluationPageState extends State<EvaluationPage> {
     }
 
     setState(() {
-      starColors = newColors;
-      starIcon = newShape;
-      stars = index+1;
+      _starColors = newColors;
+      _starIcon = newShape;
+      _stars = index+1;
     });
   }
 
@@ -76,11 +77,22 @@ class _EvaluationPageState extends State<EvaluationPage> {
                 SizedBox(
                   height: 20,
                 ),
-                Text("Name", style: TextStyle(fontSize: width-335),),
+                Text(
+                  "Name",
+                  style: TextStyle(
+                      fontSize: this._fontSize
+                  ),
+                ),
                 SizedBox(
                   height: 20,
                 ),
-                Text("Por favor evalua la ayudad brindada por Name con tu problema", style: TextStyle(fontSize: width-345),textAlign: TextAlign.center,),
+                Text(
+                  "Por favor evalua la ayudad brindada por Name con tu problema",
+                  style: TextStyle(
+                      fontSize: this._fontSize
+                  ),
+                  textAlign: TextAlign.center,
+                ),
                 SizedBox(
                   height: heightScreen-600,
                 ),
@@ -92,9 +104,9 @@ class _EvaluationPageState extends State<EvaluationPage> {
                         this._changeStarColor(0);
                       },
                       child: Icon(
-                        this.starIcon[0],
+                        this._starIcon[0],
                         size: width-300,
-                        color: this.starColors[0],
+                        color: this._starColors[0],
                       ),
                     ),
                     GestureDetector(
@@ -102,9 +114,9 @@ class _EvaluationPageState extends State<EvaluationPage> {
                         this._changeStarColor(1);
                       },
                       child: Icon(
-                        this.starIcon[1],
+                        this._starIcon[1],
                         size: width-300,
-                        color: this.starColors[1],
+                        color: this._starColors[1],
                       ),
                     ),
                     GestureDetector(
@@ -112,9 +124,9 @@ class _EvaluationPageState extends State<EvaluationPage> {
                         this._changeStarColor(2);
                       },
                       child: Icon(
-                        this.starIcon[2],
+                        this._starIcon[2],
                         size: width-300,
-                        color: this.starColors[2],
+                        color: this._starColors[2],
                       ),
                     ),
                     GestureDetector(
@@ -122,9 +134,9 @@ class _EvaluationPageState extends State<EvaluationPage> {
                         this._changeStarColor(3);
                       },
                       child: Icon(
-                        this.starIcon[3],
+                        this._starIcon[3],
                         size: width-300,
-                        color: this.starColors[3],
+                        color: this._starColors[3],
                       ),
                     ),
                     GestureDetector(
@@ -132,9 +144,9 @@ class _EvaluationPageState extends State<EvaluationPage> {
                         this._changeStarColor(4);
                       },
                       child: Icon(
-                        this.starIcon[4],
+                        this._starIcon[4],
                         size: width-300,
-                        color: this.starColors[4],
+                        color: this._starColors[4],
                       ),
                     ),
                   ],
@@ -145,10 +157,15 @@ class _EvaluationPageState extends State<EvaluationPage> {
                   children: <Widget>[
                     FlatButton(
 
-                      onPressed: this.stars == -1 ? null : (){print("Hola");},
+                      onPressed: this._stars == -1 ? null : (){print("Hola");},
 
                       color: CustomColors.secondary,
-                      child: Text("Aceptar", style: TextStyle(color: Colors.white),),
+                      child: Text(
+                        "Aceptar",
+                        style: TextStyle(
+                            color: Colors.white
+                        ),
+                      ),
                     )
                   ],
                 )

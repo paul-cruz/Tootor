@@ -3,7 +3,12 @@ import 'package:tootor/src/utils/customized_colors.dart';
 
 class TootorFoundPage extends StatelessWidget{
   String funcion;
-  TootorFoundPage({this.funcion});
+  double _fontSize;
+
+  TootorFoundPage({this.funcion}){
+    this._fontSize = 20;
+  }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -36,10 +41,21 @@ class TootorFoundPage extends StatelessWidget{
                   ),
                 ),
                 SizedBox(height: 20,),
-                Text("Name", style: TextStyle(fontSize: width-340)),
+                Text(
+                    "Name",
+                    style: TextStyle(
+                        fontSize: this._fontSize
+                    ),
+                ),
                 //TODO: Get tutor's name from DB
                 SizedBox(height: 20,),
-                Text("Encontramos un tutor con las habilidades para ${this.funcion}", style: TextStyle(fontSize: width-345), textAlign: TextAlign.center,),
+                Text(
+                  "Encontramos un tutor con las habilidades para ${this.funcion}",
+                  style: TextStyle(
+                      fontSize: this._fontSize
+                  ),
+                  textAlign: TextAlign.center,
+                ),
                 SizedBox(height: 20,),
               ],
             ),
@@ -54,14 +70,26 @@ class TootorFoundPage extends StatelessWidget{
                       color: CustomColors.font_gray,
                       width: 1.0
                   ),
-                  child: Text('Cancelar', style: TextStyle(fontSize: 20, color: CustomColors.font_gray),),
+                  child: Text(
+                    'Cancelar',
+                    style: TextStyle(
+                        fontSize: this._fontSize,
+                        color: CustomColors.font_gray
+                    ),
+                  ),
                 ),
                 FlatButton(
                   color: CustomColors.secondary,
                   onPressed: () => {
                     //TODO: go to call
                   },
-                  child: Text('¡Vamos!', style: TextStyle(color: Colors.white, fontSize: 20),),
+                  child: Text(
+                    '¡Vamos!',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: this._fontSize
+                    ),
+                  ),
                 ),
               ],
             )

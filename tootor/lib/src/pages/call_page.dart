@@ -8,6 +8,9 @@ class CallPage extends StatefulWidget {
 }
 
 class _CallPageState extends State<CallPage> {
+
+  final double _fontSize = 20;
+  final double _instructionFont = 10;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -44,7 +47,13 @@ class _CallPageState extends State<CallPage> {
                 SizedBox(
                   height: 20,
                 ),
-                Text("Name se encuentra aplicando la entrevista", style: TextStyle(fontSize: width-345),textAlign: TextAlign.center,),
+                Text(
+                  "Name se encuentra aplicando la entrevista",
+                  style: TextStyle(
+                      fontSize: this._fontSize
+                  ),
+                  textAlign: TextAlign.center,
+                ),
                 SizedBox(
                   height: heightScreen-550,
                 ),
@@ -69,7 +78,13 @@ class _CallPageState extends State<CallPage> {
                         ),SizedBox(
                           height: 20,
                         ),
-                        Text("Altavoz",style: TextStyle(fontSize: width-345),textAlign: TextAlign.center,)
+                        Text(
+                          "Altavoz",
+                          style: TextStyle(
+                              fontSize: this._instructionFont
+                          ),
+                          textAlign: TextAlign.center,
+                        )
                       ],
                     ),
                     Column(
@@ -90,7 +105,13 @@ class _CallPageState extends State<CallPage> {
                         ), SizedBox(
                           height: 20,
                         ),
-                        Text("Silenciar",style: TextStyle(fontSize: width-345),textAlign: TextAlign.center,)
+                        Text(
+                          "Silenciar",
+                          style: TextStyle(
+                              fontSize: this._instructionFont
+                          ),
+                          textAlign: TextAlign.center,
+                        )
                       ],
                     ),
                     Column(
@@ -111,7 +132,13 @@ class _CallPageState extends State<CallPage> {
                         ),SizedBox(
                           height: 20,
                         ),
-                        Text("Finalizar",style: TextStyle(fontSize: width-345),textAlign: TextAlign.center,)
+                        Text(
+                          "Finalizar",
+                          style: TextStyle(
+                              fontSize: this._instructionFont
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ],
                     ),
                   ],

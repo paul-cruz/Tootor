@@ -4,7 +4,10 @@ import 'package:tootor/src/utils/customized_colors.dart';
 class ChatSolving extends StatelessWidget {
   String name;
   String role;
-  ChatSolving({this.name, this.role});
+  double _fontSize;
+  ChatSolving({this.name, this.role}){
+    this._fontSize = 20;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +48,12 @@ class ChatSolving extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: 10,),
-                    Text("${this.role} ${this.name}",
-                      style: TextStyle(fontSize: widthScreen-345, color: Colors.white),
+                    Text(
+                      "${this.role} ${this.name}",
+                      style: TextStyle(
+                          fontSize: this._fontSize-5,
+                          color: Colors.white
+                      ),
                       textAlign: TextAlign.start,
                     ),
                     SizedBox(width: 20,),

@@ -10,7 +10,7 @@ class NotificationsPage extends StatefulWidget {
 
 class _NotificationsPageState extends State<NotificationsPage> {
 
-  String name = "Juanito"; // this will be filled by data of DB
+  String _name = "Juanito"; // this will be filled by data of DB
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +28,9 @@ class _NotificationsPageState extends State<NotificationsPage> {
                 GestureDetector(
                   onTap: (){
                     print("Notificación pulsada");
-                    Navigator.of(context).push(MaterialPageRoute(builder:(context)=>HelpRequestedPage(name: this.name)));
+                    Navigator.of(context).push(MaterialPageRoute(builder:(context)=>HelpRequestedPage(name: this._name)));
                   },
-                  child: TootorNotification(name: this.name, subject: "Algebra lineal", topic: "Transformaciones lineales"),
+                  child: TootorNotification(name: this._name, subject: "Algebra lineal", topic: "Transformaciones lineales"),
                 ),
                 Divider(
                   height: 1,

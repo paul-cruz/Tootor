@@ -6,7 +6,10 @@ import 'package:tootor/src/pages/chat_solving_page.dart';
 class HelpRequestedPage extends StatelessWidget {
 
   String name;
-  HelpRequestedPage({this.name});
+  double _fontSize;
+  HelpRequestedPage({this.name}){
+    this._fontSize = 20;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +49,10 @@ class HelpRequestedPage extends StatelessWidget {
                   ),
                   SizedBox(width: 10,),
                   Text("${this.name} requiere \nayuda con el \nsiguiente problema",
-                    style: TextStyle(fontSize: widthScreen-345, color: Colors.white),
+                    style: TextStyle(
+                        fontSize: this._fontSize,
+                        color: Colors.white
+                    ),
                     textAlign: TextAlign.start,
                   ),
                 ],
@@ -54,7 +60,10 @@ class HelpRequestedPage extends StatelessWidget {
             ),
             SizedBox(height: heightScreen-630,),
             Text("Problema:",
-              style: TextStyle(color: CustomColors.font_gray, fontSize: widthScreen-345),
+              style: TextStyle(
+                  color: CustomColors.font_gray,
+                  fontSize:this._fontSize,
+              ),
               textAlign:  TextAlign.start,
             ),
             SizedBox(height: heightScreen-650,),
@@ -76,14 +85,26 @@ class HelpRequestedPage extends StatelessWidget {
                       color: CustomColors.font_gray,
                       width: 1.0
                   ),
-                  child: Text('Rechazar', style: TextStyle(fontSize: widthScreen-345, color: CustomColors.font_gray),),
+                  child: Text(
+                    'Rechazar',
+                    style: TextStyle(
+                        fontSize: this._fontSize-5,
+                        color: CustomColors.font_gray,
+                    ),
+                  ),
                 ),
                 FlatButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder:(context)=>ChatSolving(name: this.name, role: "Ayudando a ",)));
                   },
                   color: CustomColors.secondary,
-                  child: Text('¡Vamos!', style: TextStyle(fontSize: widthScreen-345, color: Colors.white),),
+                  child: Text(
+                    '¡Vamos!',
+                    style: TextStyle(
+                        fontSize: this._fontSize-5,
+                        color: Colors.white,
+                    ),
+                  ),
                 ),
               ],
             )

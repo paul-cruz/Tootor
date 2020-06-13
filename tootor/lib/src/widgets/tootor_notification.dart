@@ -4,7 +4,15 @@ class TootorNotification extends StatelessWidget{
   final String name;
   final String subject;
   final String topic;
-  TootorNotification({this.name, this.subject, this.topic});
+  double _fontSize;
+  double _subjectFontSize;
+  double _iconSize;
+
+  TootorNotification({this.name, this.subject, this.topic}){
+    this._fontSize = 17;
+    this._subjectFontSize = 13;
+    this._iconSize = 30;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +25,28 @@ class TootorNotification extends StatelessWidget{
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("${this.name} tiene una duda y tus \nhabilidades pueden ayudarlo", style: TextStyle(fontSize: width-345)),
+              Text(
+                  "${this.name} tiene una duda y tus \nhabilidades pueden ayudarlo",
+                  style: TextStyle(
+                      fontSize: this._fontSize,
+                  )
+              ),
               SizedBox(height: 10,),
-              Text("Materia: ${this.subject}",style: TextStyle(fontSize: width-350)),
-              Text("Tema: ${this.topic}",style: TextStyle(fontSize: width-350 ))
+              Text("Materia: ${this.subject}",
+                  style: TextStyle(
+                      fontSize: this._subjectFontSize
+                  )
+              ),
+              Text("Tema: ${this.topic}",
+                  style: TextStyle(
+                      fontSize: this._subjectFontSize,
+                  ),
+              ),
             ],
           ),
           Icon(
             Icons.arrow_forward_ios,
+            size: this._iconSize,
           )
         ],
       ),

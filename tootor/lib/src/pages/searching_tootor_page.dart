@@ -4,7 +4,10 @@ import 'package:tootor/src/utils/customized_colors.dart';
 class SearchingTootorPage extends StatelessWidget{
 
   String funcion;
-  SearchingTootorPage({this.funcion});
+  double _fontSize;
+  SearchingTootorPage({this.funcion}){
+    this._fontSize = 20;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,12 @@ class SearchingTootorPage extends StatelessWidget{
                   ),
                 ),
                 SizedBox(height: 20,),
-                Text("Buscando usuarios con las habilidades necesarias para ${this.funcion}.", style: TextStyle(fontSize: width-345)),
+                Text(
+                    "Buscando usuarios con las habilidades necesarias para ${this.funcion}.",
+                    style: TextStyle(
+                        fontSize: this._fontSize
+                    )
+                ),
                 SizedBox(height: 20,),
                 Text("Esto puede tardar un poco.", )
               ],
@@ -54,10 +62,16 @@ class SearchingTootorPage extends StatelessWidget{
                       color: CustomColors.font_gray,
                       width: 1.0
                   ),
-                  child: Text('Cancelar', style: TextStyle(fontSize: 20, color: CustomColors.font_gray),),
+                  child: Text(
+                    'Cancelar',
+                    style: TextStyle(
+                        fontSize: this._fontSize,
+                        color: CustomColors.font_gray
+                    ),
+                  ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

@@ -12,6 +12,7 @@ class _EnterDoubtPageState extends State<EnterDoubtPage> {
   String _topic;
   String _description;
   String _subject;
+  final double _fontSize = 20;
 
   @override
   void initState(){
@@ -48,7 +49,12 @@ class _EnterDoubtPageState extends State<EnterDoubtPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("${this._subject}", style: TextStyle(fontSize: width-340),),
+                          Text(
+                            "${this._subject}",
+                            style: TextStyle(
+                                fontSize: this._fontSize
+                            ),
+                          ),
                           Icon(
                             Icons.arrow_forward_ios,
                             size: width-330,
@@ -76,7 +82,13 @@ class _EnterDoubtPageState extends State<EnterDoubtPage> {
                     onChanged: (value) => {setState((){this._description = value;})},
                   ),
                   SizedBox(height: heightScreen-660,),
-                  Text("O introduce una foto con el problema a resolver", style: TextStyle(fontSize: width-347), textAlign: TextAlign.center,),
+                  Text(
+                    "O introduce una foto con el problema a resolver",
+                    style: TextStyle(
+                        fontSize: this._fontSize-5
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                   SizedBox(height: heightScreen-660,),
                   GestureDetector(
                     onTap: (){
@@ -101,9 +113,14 @@ class _EnterDoubtPageState extends State<EnterDoubtPage> {
                           //TODO: Upload Subject, topic and description or image
                         },
                         color: CustomColors.secondary,
-                        child: Text("¡Buscar Tutor!", style: TextStyle(fontSize: width-345, color: Colors.white),),
+                        child: Text(
+                          "¡Buscar Tutor!",
+                          style: TextStyle(
+                              fontSize: this._fontSize-5,
+                              color: Colors.white
+                          ),
+                        ),
                       ),
-
                     ],
                   )
                 ],
