@@ -147,6 +147,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
@@ -161,128 +162,148 @@ class _SignUpPageState extends State<SignUpPage> {
           behavior: HiddenScrollBehavior(),
           child: Form(
             key: _formKey,
-            child: ListView(
-              physics: NeverScrollableScrollPhysics(),
+            child: Column(
               children: <Widget>[
-                CircleAvatar(
-                  backgroundColor: CustomColors.secondary,
-                  radius: 120,
-                  child: Container(
-                    margin: EdgeInsets.all(25),
-                    width: 200,
-                    height: 200,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: AssetImage('assets/logo.png'),
-                          fit: BoxFit.contain),
+                Expanded(
+                  flex: 5,
+                  child: CircleAvatar(
+                    backgroundColor: CustomColors.secondary,
+                    radius: 120,
+                    child: Container(
+                      margin: EdgeInsets.all(25),
+                      width: 200,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage('assets/logo.png'),
+                            fit: BoxFit.contain),
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 5,
+                  height: 10.0,
                 ),
-                TextFormField(
-                  autocorrect: false,
-                  keyboardType: TextInputType.text,
-                  textCapitalization: TextCapitalization.words,
-                  decoration: InputDecoration(labelText: 'Nombre de usuario'),
-                  validator: (val) {
-                    if (val.isEmpty) {
-                      return 'Por favor ingresa un nombre de usuario';
-                    } else {
-                      return null;
-                    }
-                  },
-                  onSaved: (val) {
-                    setState(() {
-                      _username = val;
-                    });
-                  },
-                ),
-                TextFormField(
-                  autocorrect: false,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(labelText: 'Correo'),
-                  validator: (val) {
-                    if (val.isEmpty) {
-                      return 'Por favor ingresa un correo valido';
-                    } else {
-                      return null;
-                    }
-                  },
-                  onSaved: (val) {
-                    setState(() {
-                      _email = val;
-                    });
-                  },
-                ),
-                TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(labelText: 'Contraseña'),
-                  validator: (val) {
-                    if (val.isEmpty) {
-                      return 'Por favor ingresa una contraseña correcta';
-                    } else {
-                      return null;
-                    }
-                  },
-                  onSaved: (val) {
-                    setState(() {
-                      _password = val;
-                    });
-                  },
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                ButtonTheme(
-                  height: 50.0,
-                  child: RaisedButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(13.0),
-                    ),
-                    onPressed: () {
-                      _register();
+                Expanded(
+                  flex: 1,
+                  child: TextFormField(
+                    autocorrect: false,
+                    keyboardType: TextInputType.text,
+                    textCapitalization: TextCapitalization.words,
+                    decoration: InputDecoration(labelText: 'Nombre de usuario'),
+                    validator: (val) {
+                      if (val.isEmpty) {
+                        return 'Por favor ingresa un nombre de usuario';
+                      } else {
+                        return null;
+                      }
                     },
-                    textColor: Colors.white,
-                    color: CustomColors.secondary,
-                    child: const Text('¡Crea tu cuenta!',
-                        style: TextStyle(fontSize: 20)),
+                    onSaved: (val) {
+                      setState(() {
+                        _username = val;
+                      });
+                    },
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 10.0,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    RawMaterialButton(
-                      onPressed: () {
-                        _googleLogIn();
-                      },
-                      elevation: 2.0,
-                      fillColor: Colors.white,
-                      child: SvgPicture.asset(
-                        'assets/google.svg',
-                        width: 40.0,
+                Expanded(
+                  flex: 1,
+                  child: TextFormField(
+                    autocorrect: false,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(labelText: 'Correo'),
+                    validator: (val) {
+                      if (val.isEmpty) {
+                        return 'Por favor ingresa un correo valido';
+                      } else {
+                        return null;
+                      }
+                    },
+                    onSaved: (val) {
+                      setState(() {
+                        _email = val;
+                      });
+                    },
+                  ),
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(labelText: 'Contraseña'),
+                    validator: (val) {
+                      if (val.isEmpty) {
+                        return 'Por favor ingresa una contraseña correcta';
+                      } else {
+                        return null;
+                      }
+                    },
+                    onSaved: (val) {
+                      setState(() {
+                        _password = val;
+                      });
+                    },
+                  ),
+                ),
+                SizedBox(
+                  height: 40.0,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ButtonTheme(
+                    minWidth: double.infinity,
+                    child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(13.0),
                       ),
-                      padding: EdgeInsets.all(15.0),
-                      shape: CircleBorder(),
-                    ),
-                    RawMaterialButton(
                       onPressed: () {
-                        _facebookLogIn();
+                        _register();
                       },
-                      elevation: 2.0,
-                      child: SvgPicture.asset(
-                        'assets/facebook.svg',
-                        width: 70.0,
-                      ),
-                      padding: EdgeInsets.all(15.0),
-                      shape: CircleBorder(),
+                      textColor: Colors.white,
+                      color: CustomColors.secondary,
+                      child: const Text('¡Crea tu cuenta!',
+                          style: TextStyle(fontSize: 20)),
                     ),
-                  ],
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      RawMaterialButton(
+                        onPressed: () {
+                          _googleLogIn();
+                        },
+                        elevation: 2.0,
+                        fillColor: Colors.white,
+                        child: SvgPicture.asset(
+                          'assets/google.svg',
+                          width: 40.0,
+                        ),
+                        padding: EdgeInsets.all(15.0),
+                        shape: CircleBorder(),
+                      ),
+                      RawMaterialButton(
+                        onPressed: () {
+                          _facebookLogIn();
+                        },
+                        elevation: 2.0,
+                        child: SvgPicture.asset(
+                          'assets/facebook.svg',
+                          width: 70.0,
+                        ),
+                        padding: EdgeInsets.all(15.0),
+                        shape: CircleBorder(),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
