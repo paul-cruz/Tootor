@@ -1,0 +1,39 @@
+{
+    "options": [
+        {
+            "subject": "Teoría Computacional",
+            "topics": [
+                {
+                    "image": "https://lenguajesyautomatasblog.files.wordpress.com/2017/02/cropped-banner-autc3b3matas11.png",
+                    "title": "Conceptos Basicos",
+                    "desc": "Definicion de alfabetos, cadenas, prefijos y sufijos, operaciones con lenguajes"
+                },
+                {
+                    "image": "https://us.123rf.com/450wm/asmati/asmati1711/asmati171101496/89916622-ilustraci%C3%B3n-de-signo-de-cubo-de-abc-vector-icono-blanco-del-contorno-en-c%C3%ADrculo-cer%C3%BAleo-oscuro-en-el-fondo-bl.jpg?ver=6",
+                    "title": "Lenguajes",
+                    "desc": "Unió de lenguajes, concatenación de lenguajes, ejercicios con cerradura de Kleene"
+                },
+                {
+                    "image": "https://www.ecured.cu/images/c/c9/Turing_1.png",
+                    "title": "Maquinas de Turing",
+                    "desc": "Alan Turing, On computable numbers, the entscheidungsproblem"
+                }
+            ]
+        },
+        {
+            "subject": "Álgebra lineal",
+            "topics": [
+                {
+                    "image": "https://i.pinimg.com/originals/c7/5c/b1/c75cb1e42ae20c17aa48f3e850a27011.png",
+                    "title": "Conceptos Básicos",
+                    "desc": "Conjuntos: definición y operaciones"
+                },
+                {
+                    "image": "https://www.freemathhelp.com/images/lessons/mat9.png",
+                    "title": "Matrices",
+                    "desc": "Definición y operaciones"
+                }
+            ]
+        }
+    ]
+}
