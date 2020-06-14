@@ -107,7 +107,7 @@ class _EvaluationPageState extends State<EvaluationPage> {
                         },
                         child: Icon(
                           this._starIcon[0],
-                          size: width-300,
+                          size: 40,
                           color: this._starColors[0],
                         ),
                       ),
@@ -117,7 +117,7 @@ class _EvaluationPageState extends State<EvaluationPage> {
                         },
                         child: Icon(
                           this._starIcon[1],
-                          size: width-300,
+                          size: 40,
                           color: this._starColors[1],
                         ),
                       ),
@@ -127,7 +127,7 @@ class _EvaluationPageState extends State<EvaluationPage> {
                         },
                         child: Icon(
                           this._starIcon[2],
-                          size: width-300,
+                          size: 40,
                           color: this._starColors[2],
                         ),
                       ),
@@ -137,7 +137,7 @@ class _EvaluationPageState extends State<EvaluationPage> {
                         },
                         child: Icon(
                           this._starIcon[3],
-                          size: width-300,
+                          size: 40,
                           color: this._starColors[3],
                         ),
                       ),
@@ -147,7 +147,7 @@ class _EvaluationPageState extends State<EvaluationPage> {
                         },
                         child: Icon(
                           this._starIcon[4],
-                          size: width-300,
+                          size: 40,
                           color: this._starColors[4],
                         ),
                       ),

@@ -56,7 +56,7 @@ class _EnterDoubtPageState extends State<EnterDoubtPage> {
                         ),
                         Icon(
                           Icons.arrow_forward_ios,
-                          size: width-330,
+                          size: 30,
                         )
                       ],
                     ),

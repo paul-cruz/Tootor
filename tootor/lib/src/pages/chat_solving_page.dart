@@ -11,97 +11,97 @@ class ChatSolving extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double widthScreen = MediaQuery.of(context).size.width;
-    double heightScreen = MediaQuery.of(context).size.height;
+    //double widthScreen = MediaQuery.of(context).size.width;
+    //double heightScreen = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text("Resolviendo duda")),
       ),
 
-      body: ListView(
-        children: [
-          Container(
-          padding: EdgeInsets.all(0.0),
-          child:Column(
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  color: CustomColors.secondary,
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                ),
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: CustomColors.gray,
-                      radius: widthScreen-330,
-                      child: Container(
-                        margin: EdgeInsets.all(10),
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image: AssetImage('assets/smile.png'),
-                              fit: BoxFit.contain),
-                        ),
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                color: CustomColors.secondary,
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  CircleAvatar(
+                    backgroundColor: CustomColors.gray,
+                    radius: 30,
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage('assets/smile.png'),
+                            fit: BoxFit.contain),
                       ),
                     ),
-                    SizedBox(width: 10,),
-                    Text(
-                      "${this.role} ${this.name}",
-                      style: TextStyle(
-                          fontSize: this._fontSize-5,
-                          color: Colors.white
-                      ),
-                      textAlign: TextAlign.start,
+                  ),
+                  Text(
+                    "${this.role} ${this.name}",
+                    style: TextStyle(
+                        fontSize: this._fontSize-5,
+                        color: Colors.white
                     ),
-                    SizedBox(width: 20,),
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.of(context).pop();
-                      },
-                      child: ClipOval(
-                        child: Material(
-                          color: CustomColors.primary, // button color
-                          child: InkWell(
-                            splashColor: CustomColors.secondary, // inkwell color
-                            child: SizedBox(width: 56, height: 56, child: Icon(Icons.check, color: Colors.white,)),
-                            onTap: () {
-                              Navigator.of(context).pushReplacementNamed('/evaluation');
-                            },
-                          ),
+                    textAlign: TextAlign.start,
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.of(context).pop();
+                    },
+                    child: ClipOval(
+                      child: Material(
+                        color: CustomColors.primary, // button color
+                        child: InkWell(
+                          splashColor: CustomColors.secondary, // inkwell color
+                          child: SizedBox(width: 56, height: 56, child: Icon(Icons.check, color: Colors.white,)),
+                          onTap: () {
+                            Navigator.of(context).pushReplacementNamed('/evaluation');
+                          },
                         ),
-                      )
+                      ),
                     )
-                  ],
-                ),
+                  )
+                ],
               ),
-              Container(
-                height: heightScreen-220,
-              ),
-              Container(
-                color: CustomColors.primary,
-                height: heightScreen-600,
-                padding: EdgeInsets.only(left: 20),
-                child: Row(
-                  children: [
-                    Icon(Icons.camera_alt, color: CustomColors.secondary, size: widthScreen-320),
-                    SizedBox(width: widthScreen-340,),
-                    Container(
-                      width: widthScreen-100,
-                      child: TextFormField(
-                        autocorrect: false,
-                        decoration: InputDecoration(hintText: 'Enviar mensaje', fillColor: Colors.white, filled: true),
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ],
+            ),
           ),
-        ),
-      ]
+          Expanded(
+            flex: 8,
+            child: Container(
+
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: CustomColors.primary,
+              padding: EdgeInsets.only(left: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Icon(Icons.camera_alt, color: CustomColors.secondary, size: 30),
+                  Container(
+                    width: 300,
+                    child: TextFormField(
+                      autocorrect: false,
+                      decoration: InputDecoration(hintText: 'Enviar mensaje', fillColor: Colors.white, filled: true),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }

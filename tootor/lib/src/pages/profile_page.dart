@@ -26,10 +26,10 @@ class _ProfileState extends State<ProfilePage> {
           child: Column(
             children: <Widget>[
               Expanded(
-                flex: 2,
+                flex: 4,
                 child: CircleAvatar(
                   backgroundColor: CustomColors.gray,
-                  radius: width - 290,
+                  radius: 200,
                   child: Container(
                     margin: EdgeInsets.all(25),
                     width: 200,
@@ -44,7 +44,7 @@ class _ProfileState extends State<ProfilePage> {
                 ),
               ),
               Expanded(
-                flex: 1,
+                flex: 2,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,

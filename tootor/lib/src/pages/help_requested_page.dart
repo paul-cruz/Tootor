@@ -20,7 +20,7 @@ class HelpRequestedPage extends StatelessWidget {
         title: Center(child: Text("Ayuda solicitada")),
       ),
       body: Container(
-        padding: EdgeInsets.fromLTRB(20, heightScreen-650, 20, 10),
+        padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start ,
           children: [
@@ -37,7 +37,7 @@ class HelpRequestedPage extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       backgroundColor: CustomColors.gray,
-                      radius: widthScreen-320,
+                      radius: 40,
                       child: Container(
                         margin: EdgeInsets.all(15),
                         width: 100,
