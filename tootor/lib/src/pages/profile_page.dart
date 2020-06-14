@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -14,6 +16,8 @@ class _ProfileState extends State<ProfilePage> {
 
   _signout() async {
     await FirebaseAuth.instance.signOut();
+    await GoogleSignIn().signOut();
+    await FacebookLogin().logOut();
     Navigator.of(context).pushReplacementNamed('/signin');
   }
 
@@ -78,7 +82,8 @@ class _ProfileState extends State<ProfilePage> {
                         Text(
                           "Editar Habilidades",
                           style: TextStyle(
-                              fontSize: _fontSize, color: CustomColors.font_gray),
+                              fontSize: _fontSize,
+                              color: CustomColors.font_gray),
                         ),
                         Icon(
                           Icons.arrow_forward_ios,
@@ -106,7 +111,8 @@ class _ProfileState extends State<ProfilePage> {
                         Text(
                           "Configuración General",
                           style: TextStyle(
-                              fontSize: _fontSize, color: CustomColors.font_gray),
+                              fontSize: _fontSize,
+                              color: CustomColors.font_gray),
                         ),
                         Icon(
                           Icons.arrow_forward_ios,
@@ -145,8 +151,6 @@ class _ProfileState extends State<ProfilePage> {
               ),
             ],
           ),
-        )
-    );
+        ));
   }
 }
-
