@@ -22,27 +22,30 @@ class TootorNotification extends StatelessWidget{
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                  "${this.name} tiene una duda y tus \nhabilidades pueden ayudarlo",
-                  style: TextStyle(
-                      fontSize: this._fontSize,
-                  )
-              ),
-              SizedBox(height: 10,),
-              Text("Materia: ${this.subject}",
-                  style: TextStyle(
-                      fontSize: this._subjectFontSize
-                  )
-              ),
-              Text("Tema: ${this.topic}",
-                  style: TextStyle(
-                      fontSize: this._subjectFontSize,
-                  ),
-              ),
-            ],
+          Expanded(
+            flex: 5,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                    "${this.name} tiene una duda y tus \nhabilidades pueden ayudarlo",
+                    style: TextStyle(
+                        fontSize: this._fontSize,
+                    )
+                ),
+                SizedBox(height: 10,),
+                Text("Materia: ${this.subject}",
+                    style: TextStyle(
+                        fontSize: this._subjectFontSize
+                    )
+                ),
+                Text("Tema: ${this.topic}",
+                    style: TextStyle(
+                        fontSize: this._subjectFontSize,
+                    ),
+                ),
+              ],
+            ),
           ),
           Icon(
             Icons.arrow_forward_ios,

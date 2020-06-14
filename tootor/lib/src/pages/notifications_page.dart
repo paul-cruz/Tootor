@@ -36,6 +36,17 @@ class _NotificationsPageState extends State<NotificationsPage> {
                   height: 1,
                   color: CustomColors.divider_gray,
                 ),
+                GestureDetector(
+                  onTap: (){
+                    print("Notificación pulsada");
+                    Navigator.of(context).push(MaterialPageRoute(builder:(context)=>HelpRequestedPage(name: "Javier")));
+                  },
+                  child: TootorNotification(name: "Javier", subject: "Teoría computacional", topic: "AFD"),
+                ),
+                Divider(
+                  height: 1,
+                  color: CustomColors.divider_gray,
+                ),
               ],
             ),
           )

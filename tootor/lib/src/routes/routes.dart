@@ -12,7 +12,7 @@ import 'package:tootor/src/pages/call_page.dart';
 import 'package:tootor/src/pages/evaluation_page.dart';
 import 'package:tootor/src/pages/enter_doubt_page.dart';
 import 'package:tootor/src/pages/help_requested_page.dart';
-
+import 'package:tootor/src/pages/chat_solving_page.dart';
 Map<String, WidgetBuilder> buildAppRoutes() {
   return <String, WidgetBuilder>{
     '/signin': (BuildContext context) => SignInPage(),
@@ -28,5 +28,6 @@ Map<String, WidgetBuilder> buildAppRoutes() {
     '/evaluation': (BuildContext context) => EvaluationPage(),
     '/enterdoubt': (BuildContext context) => EnterDoubtPage(),
     '/helprequested': (BuildContext context) => HelpRequestedPage(),
+    '/chatsolving' : (BuildContext context) => ChatSolving(),
   };
 }

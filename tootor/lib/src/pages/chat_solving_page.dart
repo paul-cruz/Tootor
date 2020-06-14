@@ -68,7 +68,7 @@ class ChatSolving extends StatelessWidget {
                             splashColor: CustomColors.secondary, // inkwell color
                             child: SizedBox(width: 56, height: 56, child: Icon(Icons.check, color: Colors.white,)),
                             onTap: () {
-                              Navigator.of(context).pop();
+                              Navigator.of(context).pushReplacementNamed('/evaluation');
                             },
                           ),
                         ),

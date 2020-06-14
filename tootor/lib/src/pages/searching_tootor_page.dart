@@ -22,55 +22,62 @@ class SearchingTootorPage extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                CircleAvatar(
-                  backgroundColor: CustomColors.gray,
-                  radius: width-280,
-                  child: Container(
-                    margin: EdgeInsets.all(25),
-                    width: 200,
-                    height: 200,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: AssetImage('assets/smile.png'),
-                          fit: BoxFit.contain),
+            Expanded(
+              flex: 3,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  CircleAvatar(
+                    backgroundColor: CustomColors.gray,
+                    radius: width-280,
+                    child: Container(
+                      margin: EdgeInsets.all(25),
+                      width: 200,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage('assets/smile.png'),
+                            fit: BoxFit.contain),
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 20,),
-                Text(
-                    "Buscando usuarios con las habilidades necesarias para ${this.funcion}.",
-                    style: TextStyle(
-                        fontSize: this._fontSize
-                    )
-                ),
-                SizedBox(height: 20,),
-                Text("Esto puede tardar un poco.", )
-              ],
+                  Expanded(
+                    flex: 2,
+                    child: Text(
+                        "Buscando usuarios con las habilidades necesarias para ${this.funcion}.",
+                        style: TextStyle(
+                            fontSize: this._fontSize
+                        )
+                    ),
+                  ),
+                  Expanded(flex: 1,child: Text("Esto puede tardar un poco.", ))
+                ],
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                OutlineButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  borderSide: BorderSide(
-                      color: CustomColors.font_gray,
-                      width: 1.0
-                  ),
-                  child: Text(
-                    'Cancelar',
-                    style: TextStyle(
-                        fontSize: this._fontSize,
-                        color: CustomColors.font_gray
+            Expanded(
+              flex: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  OutlineButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    borderSide: BorderSide(
+                        color: CustomColors.font_gray,
+                        width: 1.0
+                    ),
+                    child: Text(
+                      'Cancelar',
+                      style: TextStyle(
+                          fontSize: this._fontSize,
+                          color: CustomColors.font_gray
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
