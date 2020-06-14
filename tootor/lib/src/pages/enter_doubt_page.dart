@@ -22,7 +22,6 @@ class _EnterDoubtPageState extends State<EnterDoubtPage> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double heightScreen = MediaQuery.of(context).size.height;
     return Container(
           padding: EdgeInsets.all(20.0),
           child: Center(

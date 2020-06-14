@@ -11,8 +11,6 @@ class ChatSolving extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //double widthScreen = MediaQuery.of(context).size.width;
-    //double heightScreen = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text("Resolviendo duda")),

@@ -29,7 +29,7 @@ class _CallPageState extends State<CallPage> {
                   flex: 2,
                   child: CircleAvatar(
                     backgroundColor: CustomColors.gray,
-                    radius: width-290,
+                    radius: 90,
                     child: Container(
                       margin: EdgeInsets.all(25),
                       width: 200,
@@ -69,13 +69,11 @@ class _CallPageState extends State<CallPage> {
                             fillColor: CustomColors.secondary,
                             child: Icon(
                               Icons.volume_up,
-                              size: width-300,
+                              size: 50,
                               color: Colors.white,
                             ),
-                            padding: EdgeInsets.all(width-350),
+                            padding: EdgeInsets.all(10),
                             shape: CircleBorder(),
-                          ),SizedBox(
-                            height: 20,
                           ),
                           Text(
                             "Altavoz",
@@ -96,13 +94,11 @@ class _CallPageState extends State<CallPage> {
                             fillColor: Colors.grey[700],
                             child: Icon(
                               Icons.mic_off,
-                              size: width-300,
+                              size: 50,
                               color: Colors.white,
                             ),
-                            padding: EdgeInsets.all(width-350),
+                            padding: EdgeInsets.all(10),
                             shape: CircleBorder(),
-                          ), SizedBox(
-                            height: 20,
                           ),
                           Text(
                             "Silenciar",
@@ -123,13 +119,11 @@ class _CallPageState extends State<CallPage> {
                             fillColor: CustomColors.red,
                             child: Icon(
                               Icons.phone,
-                              size: width-300,
+                              size: 50,
                               color: Colors.white,
                             ),
-                            padding: EdgeInsets.all(width-350),
+                            padding: EdgeInsets.all(10),
                             shape: CircleBorder(),
-                          ),SizedBox(
-                            height: 20,
                           ),
                           Text(
                             "Finalizar",

@@ -63,7 +63,7 @@ class _EvaluationPageState extends State<EvaluationPage> {
                   flex: 2,
                   child: CircleAvatar(
                     backgroundColor: CustomColors.gray,
-                    radius: width-290,
+                    radius: 110,
                     child: Container(
                       margin: EdgeInsets.all(25),
                       width: 200,

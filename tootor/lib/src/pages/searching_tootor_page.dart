@@ -11,23 +11,21 @@ class SearchingTootorPage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text("Buscando Tutor")),
       ),
       body: Container(
-        padding: EdgeInsets.fromLTRB(20, height-650, 20, 10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                CircleAvatar(
+        padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 3,
+                child: CircleAvatar(
                   backgroundColor: CustomColors.gray,
-                  radius: width-280,
+                  radius: 90,
                   child: Container(
                     margin: EdgeInsets.all(25),
                     width: 200,
@@ -40,39 +38,43 @@ class SearchingTootorPage extends StatelessWidget{
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
-                Text(
+              ),
+              Expanded(
+                flex: 2,
+                child: Text(
                     "Buscando usuarios con las habilidades necesarias para ${this.funcion}.",
                     style: TextStyle(
                         fontSize: this._fontSize
                     )
                 ),
-                SizedBox(height: 20,),
-                Text("Esto puede tardar un poco.", )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                OutlineButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  borderSide: BorderSide(
-                      color: CustomColors.font_gray,
-                      width: 1.0
-                  ),
-                  child: Text(
-                    'Cancelar',
-                    style: TextStyle(
-                        fontSize: this._fontSize,
-                        color: CustomColors.font_gray
+              ),
+              Expanded(flex: 2, child: Text("Esto puede tardar un poco.", )),
+              Expanded(
+                flex: 2,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    OutlineButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      borderSide: BorderSide(
+                          color: CustomColors.font_gray,
+                          width: 1.0
+                      ),
+                      child: Text(
+                        'Cancelar',
+                        style: TextStyle(
+                            fontSize: this._fontSize,
+                            color: CustomColors.font_gray
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );
