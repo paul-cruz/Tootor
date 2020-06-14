@@ -12,7 +12,7 @@ class _EnterDoubtPageState extends State<EnterDoubtPage> {
   String _topic;
   String _description;
   String _subject;
-  final double _fontSize = 20;
+  double _fontSize = 20;
 
   @override
   void initState(){

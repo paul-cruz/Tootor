@@ -16,7 +16,7 @@ class _MainNavegation extends State<MainNavegation> {
   int _selectedPage = 0;
   double _fontSize = 10.0;
   
-  final _pageOptions = [
+  var _pageOptions = [
     Text("Examen"),
     Text("Entrevista"),
     EnterDoubtPage(),

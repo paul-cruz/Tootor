@@ -3,7 +3,7 @@ import 'package:tootor/src/behaviors/hiddenScrollBehovior.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 
 class SelectSubjectPage extends StatelessWidget{
-  final Function onSubjectSelected;
+  Function onSubjectSelected;
   double _fontSize;
 
   SelectSubjectPage({this.onSubjectSelected}){

@@ -9,8 +9,8 @@ class CallPage extends StatefulWidget {
 
 class _CallPageState extends State<CallPage> {
 
-  final double _fontSize = 20;
-  final double _instructionFont = 15;
+  double _fontSize = 20;
+  double _instructionFont = 15;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
