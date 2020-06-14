@@ -16,7 +16,12 @@ import 'package:tootor/src/pages/enter_doubt_page.dart';
 import 'package:tootor/src/pages/help_requested_page.dart';
 import 'package:tootor/src/pages/chat_solving_page.dart';
 import 'package:tootor/src/pages/upload_photo_page.dart';
-
+import 'package:tootor/src/pages/ask_add_abilities.dart';
+import 'package:tootor/src/pages/add_abilities.dart';
+import 'package:tootor/src/pages/select_hability_page.dart';
+import '../pages/add_abilities.dart';
+import '../pages/ask_add_abilities.dart';
+import '../pages/select_hability_page.dart';
 Map<String, WidgetBuilder> buildAppRoutes() {
   return <String, WidgetBuilder>{
     '/signin': (BuildContext context) => SignInPage(),
@@ -36,5 +41,8 @@ Map<String, WidgetBuilder> buildAppRoutes() {
     '/enterdoubt': (BuildContext context) => EnterDoubtPage(),
     '/helprequested': (BuildContext context) => HelpRequestedPage(),
     '/chatsolving' : (BuildContext context) => ChatSolving(),
+    '/askaddabilities' : (BuildContext context) => AskAddAbilities(),
+    '/addabilities' : (BuildContext context) => AddAbilities(),
+    '/selectHability' : (BuildContext context) => SelectHabilityPage(),
   };
 }
