@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:tootor/src/providers/test_provider.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 
+class TestData {
+  String subject;
+  List options;
+
+  TestData({this.subject, this.options});
+}
+
 class TestPage extends StatefulWidget {
   TestPage({Key key}) : super(key: key);
 
@@ -10,45 +17,6 @@ class TestPage extends StatefulWidget {
 }
 
 class _TestPageState extends State<TestPage> {
-  Widget _buildCard2(Map item) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.0),
-          color: Colors.white,
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-                color: Colors.black26,
-                blurRadius: 10.0,
-                spreadRadius: 2.0,
-                offset: Offset(2.0, 10.0))
-          ]),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20.0),
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              FadeInImage(
-                placeholder: AssetImage('assets/loading.gif'),
-                image: NetworkImage(item['image']),
-                fadeInDuration: Duration(milliseconds: 200),
-                fit: BoxFit.cover,
-              ),
-              Container(
-                padding: EdgeInsets.all(10.0),
-                child: ListTile(
-                  title: Text(item['title']),
-                  subtitle: Text(
-                    item['desc'],
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 
   Widget _buildCard(Map item) {
     return Card(
@@ -120,11 +88,16 @@ class _TestPageState extends State<TestPage> {
       final tempWidget = Container(
           color: CustomColors.secondary,
           child: ListTile(
-            title: Text(item['subject'],style: TextStyle(color: Colors.white),),
-            trailing:
-                Icon(Icons.keyboard_arrow_right, color: Colors.white),
+            title: Text(
+              item['subject'],
+              style: TextStyle(color: Colors.white),
+            ),
+            trailing: Icon(Icons.keyboard_arrow_right, color: Colors.white),
             onTap: () {
-              //Navigator.pushNamed(context, item['ruta']);
+              Navigator.of(context).pushNamed(
+                '/test/detail',
+                arguments: TestData(subject: item['subject'], options: item['topics']),
+              );
               // final route = MaterialPageRoute(builder: (context) => AlertPage());
               // Navigator.push(context, route);
             },
