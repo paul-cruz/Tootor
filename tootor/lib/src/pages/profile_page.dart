@@ -18,7 +18,8 @@ class _ProfileState extends State<ProfilePage> {
     await FirebaseAuth.instance.signOut();
     await GoogleSignIn().signOut();
     await FacebookLogin().logOut();
-    Navigator.of(context).pushReplacementNamed('/signin');
+    Navigator.of(context)
+        .pushNamedAndRemoveUntil('/signin', (Route<dynamic> route) => false);
   }
 
   @override

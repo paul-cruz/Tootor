@@ -40,8 +40,7 @@ class _SignUpPageState extends State<SignUpPage> {
           accessToken: googleSignInAuth.accessToken);
 
       await FirebaseAuth.instance.signInWithCredential(credential);
-      Navigator.of(context).pop();
-      Navigator.of(context).pushNamed('/uploadphoto');
+      Navigator.of(context).pushNamedAndRemoveUntil('/uploadphoto', (route) => false);
     } on Exception catch (e) {
       _scaffoldKey.currentState.hideCurrentSnackBar();
       _scaffoldKey.currentState.showSnackBar(SnackBar(
@@ -78,8 +77,8 @@ class _SignUpPageState extends State<SignUpPage> {
         accessToken: result.accessToken.token,
       );
       await FirebaseAuth.instance.signInWithCredential(credential);
-      Navigator.of(context).pop();
-      Navigator.of(context).pushNamed('/uploadphoto');
+      
+      Navigator.of(context).pushNamedAndRemoveUntil('/uploadphoto', (route) => false);
     } on Exception catch (e) {
       _scaffoldKey.currentState.hideCurrentSnackBar();
       _scaffoldKey.currentState.showSnackBar(SnackBar(
@@ -124,8 +123,7 @@ class _SignUpPageState extends State<SignUpPage> {
     try {
       await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: _email, password: _password);
-      Navigator.of(context).pop();
-      Navigator.of(context).pushNamed('/uploadphoto');
+      Navigator.of(context).pushNamedAndRemoveUntil('/uploadphoto', (route) => false);
     } on Exception catch (e) {
       _scaffoldKey.currentState.hideCurrentSnackBar();
       _scaffoldKey.currentState.showSnackBar(SnackBar(
