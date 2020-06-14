@@ -15,12 +15,14 @@ import 'package:tootor/src/pages/evaluation_page.dart';
 import 'package:tootor/src/pages/enter_doubt_page.dart';
 import 'package:tootor/src/pages/help_requested_page.dart';
 import 'package:tootor/src/pages/chat_solving_page.dart';
+import 'package:tootor/src/pages/upload_photo_page.dart';
 
 Map<String, WidgetBuilder> buildAppRoutes() {
   return <String, WidgetBuilder>{
     '/signin': (BuildContext context) => SignInPage(),
     '/signup': (BuildContext context) => SignUpPage(),
     '/test/detail': (BuildContext context) => TestDetailPage(),
+    '/uploadphoto': (BuildContext context) => UploadImagePage(),
     '/interview/detail': (BuildContext context) => InterviewDetailPage(),
     '/home': (BuildContext context) => MainNavegation(),
     '/forgotpasswd': (BuildContext context) => ForgotPasswdPage(),
