@@ -9,6 +9,8 @@ class TestDetailPage extends StatefulWidget {
   _TestDetailPageState createState() => _TestDetailPageState();
 }
 
+class _TestDetailPageState extends State<TestDetailPage> {
+
   Widget _buildCard(Map item) {
     return Card(
       elevation: 4.0,
@@ -57,7 +59,6 @@ class TestDetailPage extends StatefulWidget {
     );
   }
 
-class _TestDetailPageState extends State<TestDetailPage> {
   List<Widget> _buildList(List data) {
     List<Widget> options_list = [];
     data.forEach((element) {
