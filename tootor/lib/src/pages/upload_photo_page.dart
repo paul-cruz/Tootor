@@ -24,7 +24,7 @@ class _UploadImagePageState extends State<UploadImagePage> {
   }
 
   _continue() {
-    Navigator.of(context).pushReplacementNamed('/home');
+    Navigator.of(context).pushNamed('/askaddabilities');
   }
 
   @override
