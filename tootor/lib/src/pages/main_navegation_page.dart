@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tootor/src/pages/interview_page.dart';
 import 'package:tootor/src/pages/test_page.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 import 'package:tootor/src/routes/routes.dart';
@@ -19,7 +20,7 @@ class _MainNavegation extends State<MainNavegation> {
   
   var _pageOptions = [
     TestPage(),
-    Text("Entrevista"),
+    InterviewPage(),
     EnterDoubtPage(),
     NotificationsPage(),
     ProfilePage()

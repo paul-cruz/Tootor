@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tootor/src/pages/forgot_password.dart';
+import 'package:tootor/src/pages/interview_detail_page.dart';
 import 'package:tootor/src/pages/main_navegation_page.dart';
 import 'package:tootor/src/pages/signin_page.dart';
 import 'package:tootor/src/pages/signup_page.dart';
@@ -20,6 +21,7 @@ Map<String, WidgetBuilder> buildAppRoutes() {
     '/signin': (BuildContext context) => SignInPage(),
     '/signup': (BuildContext context) => SignUpPage(),
     '/test/detail': (BuildContext context) => TestDetailPage(),
+    '/interview/detail': (BuildContext context) => InterviewDetailPage(),
     '/home': (BuildContext context) => MainNavegation(),
     '/forgotpasswd': (BuildContext context) => ForgotPasswdPage(),
     '/selectsubject': (BuildContext context) => SelectSubjectPage(),
