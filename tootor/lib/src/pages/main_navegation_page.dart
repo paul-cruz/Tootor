@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tootor/src/pages/test_page.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 import 'package:tootor/src/routes/routes.dart';
 import 'package:tootor/src/pages/profile_page.dart';
@@ -17,7 +18,7 @@ class _MainNavegation extends State<MainNavegation> {
   double _fontSize = 10.0;
   
   var _pageOptions = [
-    Text("Examen"),
+    TestPage(),
     Text("Entrevista"),
     EnterDoubtPage(),
     NotificationsPage(),
