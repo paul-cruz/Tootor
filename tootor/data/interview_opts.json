@@ -1,0 +1,39 @@
+{
+    "options": [
+        {
+            "subject": "Arrays",
+            "topics": [
+                {
+                    "image": "https://iq.opengenus.org/content/images/2020/04/index.png",
+                    "title": "2D Array - DS",
+                    "desc": "We define an hourglass in  to be a subset of values with indices falling in this pattern in arr's graphical representation"
+                },
+                {
+                    "image": "https://www.researchgate.net/profile/Richard_Holden3/publication/277291885/figure/fig8/AS:294403051671560@1447202565593/Array-manipulation.png",
+                    "title": "Array Manipulation",
+                    "desc": "Starting with a 1-indexed array of zeros and a list of operations, for each operation add a value to each of the array element between two given indices, inclusive."
+                },
+                {
+                    "image": "https://www.includehelp.com/java-programs/Images/minimum-swap-for-an-array.PNG",
+                    "title": "Minimum Swaps 2",
+                    "desc": "You are given an unordered array consisting of consecutive integers  [1, 2, 3, ..., n] without any duplicates. "
+                }
+            ]
+        },
+        {
+            "subject": "Dictionaries and Hashmaps ",
+            "topics": [
+                {
+                    "image": "https://66.media.tumblr.com/b4c87acdfa2ab244bfef3e712a008542/fc692fc79de14746-ca/s500x750/8f4ec1f580bcd6f7fd74d3c4c43c2482cbc785de.jpg",
+                    "title": "Sherlock and Anagrams",
+                    "desc": "Two strings are anagrams of each other if the letters of one string can be rearranged to form the other string. Given a string, find the number of pairs of substrings of the string that are anagrams of each other."
+                },
+                {
+                    "image": "https://www.musical-u.com/wp-content/uploads/2015/10/TR4-TRIP-EX-1-431x200.png",
+                    "title": "Count Triplets",
+                    "desc": "You are given an array and you need to find number of tripets of indices (i,j,k) such that the elements at those indices are in geometric progression for a given common ratio r and i<j<k."
+                }
+            ]
+        }
+    ]
+}

@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:tootor/src/providers/test_provider.dart';
+import 'package:tootor/src/providers/interview_provider.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 
-class TestData {
+class InterviewData {
   String subject;
   List options;
 
-  TestData({this.subject, this.options});
+  InterviewData({this.subject, this.options});
 }
 
-class TestPage extends StatefulWidget {
-  TestPage({Key key}) : super(key: key);
+class InterviewPage extends StatefulWidget {
+  InterviewPage({Key key}) : super(key: key);
 
   @override
-  _TestPageState createState() => _TestPageState();
+  _InterviewPageState createState() => _InterviewPageState();
 }
 
-class _TestPageState extends State<TestPage> {
-
+class _InterviewPageState extends State<InterviewPage> {
   Widget _buildCard(Map item) {
     return Card(
       elevation: 4.0,
@@ -95,8 +94,9 @@ class _TestPageState extends State<TestPage> {
             trailing: Icon(Icons.keyboard_arrow_right, color: Colors.white),
             onTap: () {
               Navigator.of(context).pushNamed(
-                '/test/detail',
-                arguments: TestData(subject: item['subject'], options: item['topics']),
+                '/interview/detail',
+                arguments: InterviewData(
+                    subject: item['subject'], options: item['topics']),
               );
               // final route = MaterialPageRoute(builder: (context) => AlertPage());
               // Navigator.push(context, route);
@@ -115,7 +115,7 @@ class _TestPageState extends State<TestPage> {
         }
     );*/
     return FutureBuilder(
-      future: testProvider.loadData(),
+      future: interviewProvider.loadData(),
       initialData: [],
       builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
         return ListView(
