@@ -79,7 +79,7 @@ class _ChatSolvingState extends State<ChatSolving> {
                 ),
               ),
               Text(
-                "Chat con Eduardo Mz",
+                "Resolviendo duda",
                 style: TextStyle(
                     fontSize: this._fontSize-2,
                     color: Colors.white

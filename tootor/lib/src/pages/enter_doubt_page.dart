@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 import 'package:tootor/src/pages/select_subject_page.dart';
+import 'package:tootor/src/pages/searching_tootor_page.dart';
 class EnterDoubtPage extends StatefulWidget {
   @override
   _EnterDoubtPageState createState() => _EnterDoubtPageState();
@@ -113,15 +114,24 @@ class _EnterDoubtPageState extends State<EnterDoubtPage> {
               Expanded(
                 flex: 1,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     FlatButton(
-                      onPressed: (){
-                        //TODO: Upload Subject, topic and description or image
-                      },
+                      onPressed: this._subject!="Selecciona una materia" ?(){Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context)=>SearchingTootorPage(funcion: 'aplicarte una entrevista',)));}:null,
                       color: CustomColors.secondary,
                       child: Text(
-                        "¡Buscar Tutor!",
+                        "¡Buscar Entrevista!",
+                        style: TextStyle(
+                            fontSize: this._fontSize-5,
+                            color: Colors.white
+                        ),
+                      ),
+                    ),
+                    FlatButton(
+                      onPressed: this._subject!="Selecciona una materia" ?(){ Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context)=>SearchingTootorPage(funcion: 'ayudarte por chat',)));}: null,
+                      color: CustomColors.secondary,
+                      child: Text(
+                        "¡Buscar Chat!",
                         style: TextStyle(
                             fontSize: this._fontSize-5,
                             color: Colors.white

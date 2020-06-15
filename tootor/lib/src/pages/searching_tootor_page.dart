@@ -1,16 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
-
+import 'package:tootor/src/pages/index.dart';
+import 'package:tootor/src/pages/chat_solving_page.dart';
 class SearchingTootorPage extends StatelessWidget{
+
+  Future<void> tempo(context) async{
+    await Future.delayed(Duration(seconds: 10));
+    if(this.funcion == "ayudarte por chat"){
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context)=>ChatSolving()));
+    }else
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context)=>IndexPage()));
+  }
 
   String funcion;
   double _fontSize;
   SearchingTootorPage({this.funcion}){
     this._fontSize = 20;
+
   }
 
   @override
   Widget build(BuildContext context) {
+    tempo(context);
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text("Buscando Tutor")),
