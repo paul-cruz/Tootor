@@ -39,8 +39,8 @@ class _UploadImagePageState extends State<UploadImagePage> {
           Expanded(
             flex: 5,
             child: Container(
-              width: 300.0,
-              height: 300.0,
+              width: 250.0,
+              height: 250.0,
               child: RawMaterialButton(
                 shape: CircleBorder(),
                 fillColor: CustomColors.secondary,

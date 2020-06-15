@@ -18,7 +18,7 @@ class _SignUpEndPageState extends State<SignUpEndPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Elige una foto de pefil'),
+        title: Text('¡Listo, hemos terminado!'),
         centerTitle: true,
       ),
       body: Column(
