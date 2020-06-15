@@ -103,7 +103,7 @@ class HelpRequestedPage extends StatelessWidget {
                   ),
                   FlatButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder:(context)=>ChatSolving(name: this.name, role: "Ayudando a ",)));
+                      Navigator.push(context, MaterialPageRoute(builder:(context)=>ChatSolving()));
                     },
                     color: CustomColors.secondary,
                     child: Text(
