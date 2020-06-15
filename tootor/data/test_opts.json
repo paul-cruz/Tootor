@@ -29,12 +29,48 @@
                 {
                     "image": "https://us.123rf.com/450wm/asmati/asmati1711/asmati171101496/89916622-ilustraci%C3%B3n-de-signo-de-cubo-de-abc-vector-icono-blanco-del-contorno-en-c%C3%ADrculo-cer%C3%BAleo-oscuro-en-el-fondo-bl.jpg?ver=6",
                     "title": "Lenguajes",
-                    "desc": "Unió de lenguajes, concatenación de lenguajes, ejercicios con cerradura de Kleene"
+                    "desc": "Unió de lenguajes, concatenación de lenguajes, ejercicios con cerradura de Kleene",
+                    "quiz": [
+                        {
+                            "question": "¿Que es un lenguaje?",
+                            "Answer1": "Cualquier subconjunto del lenguaje universal del alfabeto.",
+                            "Answer2": "Conjunto de palabras con sentido del alfabeto.",
+                            "Answer3": "Union de palabras generadas por la concatenación de los caracteres del alfabeto. ",
+                            "Answer4": "Concatenación de diversos alfabetos establecidos.",
+                            "CorrectAnswer": "1"
+                        },
+                        {
+                            "question": "¿Que es la unión de lenguajes?",
+                            "Answer1": "Concatenación de diversos alfabetos establecidos.",
+                            "Answer2": "Cualquier subconjunto del lenguaje universal del alfabeto.",
+                            "Answer3": "Conjunto formado por las cadenas que pertenezcan indistintamente a uno u otro de los dos lenguajes.",
+                            "Answer4": "Secuencia finita de símbolos o letras seleccionados de algún diccionario.",
+                            "CorrectAnswer": "3"
+                        }
+                    ]
                 },
                 {
                     "image": "https://www.ecured.cu/images/c/c9/Turing_1.png",
                     "title": "Maquinas de Turing",
-                    "desc": "Alan Turing, On computable numbers, the entscheidungsproblem"
+                    "desc": "Alan Turing, On computable numbers, the entscheidungsproblem",
+                    "quiz": [
+                        {
+                            "question": "¿Que es un automata?",
+                            "Answer1": "Maquina de estados que permite realizar actividades autonomas.",
+                            "Answer2": "Máquina automática programable capaz de realizar determinadas operaciones de manera autónoma.",
+                            "Answer3": "Maquina capaz de realizar operaciones autonomas sin intervención. ",
+                            "Answer4": "Maquina programable capaz de realizar actividades finitas.",
+                            "CorrectAnswer": "2"
+                        },
+                        {
+                            "question": "¿Que es un automata de estado finito?",
+                            "Answer1": "Conjunto de estados finitos programables, capaces de realiizar operacoines autonomas .",
+                            "Answer2": "Conjunto de estados programables, clasificados por fines.",
+                            "Answer3": "Maquina de estados que permite realizar actividades autonomas.",
+                            "Answer4": "Conjunto de estados y un control que se mueve de un estado a otro en respuesta a entradas externas.",
+                            "CorrectAnswer": "4"
+                        }
+                    ]
                 }
             ]
         },
@@ -44,12 +80,354 @@
                 {
                     "image": "https://i.pinimg.com/originals/c7/5c/b1/c75cb1e42ae20c17aa48f3e850a27011.png",
                     "title": "Conceptos Básicos",
-                    "desc": "Conjuntos: definición y operaciones"
+                    "desc": "Conjuntos: definición y operaciones",
+                    "quiz": [
+                        {
+                            "question": "¿Que es un vector?",
+                            "Answer1": "Es un arreglo de números.",
+                            "Answer2": "Es un conjunto de valores.",
+                            "Answer3": "Es una serie de numeros relacionados por una función.",
+                            "Answer4": "Es un conjunto de numeros enteros.",
+                            "CorrectAnswer": "1"
+                        },
+                        {
+                            "question": "¿Que es un sistema de ecuaciones?",
+                            "Answer1": "Conjunto de valores relacionados por una función.",
+                            "Answer2": "Conjunto de ecuaciones que no tienen una solución posible.",
+                            "Answer3": "Conjunto de ecuaciones relacionadas no solucionables.",
+                            "Answer4": "Conjunto de ecuaciones con más de una incógnita que conforman un problema matemático.",
+                            "CorrectAnswer": "4"
+                        }
+                    ]
                 },
                 {
                     "image": "https://www.freemathhelp.com/images/lessons/mat9.png",
                     "title": "Matrices",
-                    "desc": "Definición y operaciones"
+                    "desc": "Definición y operaciones",
+                    "quiz": [
+                        {
+                            "question": "¿Que es una matriz?",
+                            "Answer1": "Conjunto de valores organizados en una tabla.",
+                            "Answer2": "Es un vector de 2 dimensiones (Filas y columnas).",
+                            "Answer3": "Conjunto de vetores relacionados por una incognita.",
+                            "Answer4": "Valores aleatorios ordenados en un arreglo.",
+                            "CorrectAnswer": "2"
+                        },
+                        {
+                            "question": "¿Que puede representar una matriz?",
+                            "Answer1": "Un conjunto de funciones.",
+                            "Answer2": "Una suma de vectores.",
+                            "Answer3": "Un conjunto de vectores.",
+                            "Answer4": "Un sistema de ecuacoines.",
+                            "CorrectAnswer": "4"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Administración financiera",
+            "topics": [
+                {
+                    "image": "https://blog.nubox.com/hubfs/calcular-activos-pasivos.png",
+                    "title": "Activos y pasivos",
+                    "desc": "Conceptos básicos",
+                    "quiz": [
+                        {
+                            "question": "¿Que es un activo?",
+                            "Answer1": "Conjunto de todos los bienes y derechos que son propiedad de una empresa.",
+                            "Answer2": "Capital que dispone una empresa del banco.",
+                            "Answer3": "Propiedades del almacén que posee una empresa.",
+                            "Answer4": "Dinero en efectivo que posee una empresa.",
+                            "CorrectAnswer": "1"
+                        },
+                        {
+                            "question": "¿Que es un pasivo?",
+                            "Answer1": "Dinero que la empresa le debe al banco.",
+                            "Answer2": "Terrenos y bienes materiales que la empresa aun no paga.",
+                            "Answer3": "Valor monetario que suman las deudas y compromisos que una empresa.",
+                            "Answer4": "Prestamos vencidos o no liquidados de una empresa.",
+                            "CorrectAnswer": "3"
+                        }
+                    ]
+                },
+                {
+                    "image": "https://blog.nubox.com/hubfs/estados-financieros-consolidados.png",
+                    "title": "Estados financieros",
+                    "desc": "Definiciones y tipos",
+                    "quiz": [
+                        {
+                            "question": "¿Que es el balance general?",
+                            "Answer1": "Reporte donde se describe el contenido del almacen de una empresa.",
+                            "Answer2": "Reporte financiero que describe las cuentas bancarias de una empresa.",
+                            "Answer3": "Reporte financiero que refleja la situación financiera de una empresa a una fecha determinada.",
+                            "Answer4": "Reporte financiero que organiza las deudas que tiene la empresa.",
+                            "CorrectAnswer": "3"
+                        },
+                        {
+                            "question": "¿Que es el estado de resultados?",
+                            "Answer1": "Reporte financiero que describe las cuentas bancarias de una empresa.",
+                            "Answer2": "Reporte que muestra detalladamente la forma de cómo se obtuvo el resultado del ejercicio.",
+                            "Answer3": "Reporte financiero que organiza las deudas que tiene la empresa.",
+                            "Answer4": "Reporte financiero que obtiene los gastos realizados por una empresa.",
+                            "CorrectAnswer": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Sistemas operativos",
+            "topics": [
+                {
+                    "image": "https://www.softzone.es/app/uploads-softzone.es/2017/10/admintareas-930x452.jpg",
+                    "title": "Administrador de procesos",
+                    "desc": "Definiciones básicas",
+                    "quiz": [
+                        {
+                            "question": "¿Que es el cuanto?",
+                            "Answer1": "Tiempo en procesador que se le asigna a un proceso en estado listo.",
+                            "Answer2": "Procesos abiertos por segundo.",
+                            "Answer3": "Numero de aplicaciones iniciadas en un tiempo determinado.",
+                            "Answer4": "Cantidad de procesos ejecutada por el procesador.",
+                            "CorrectAnswer": "1"
+                        },
+                        {
+                            "question": "¿Que es el planificador de procesos?",
+                            "Answer1": "Programa que ordena los procesos abiertos en segundo plano.",
+                            "Answer2": "Es quien toma la decisión de qué proceso utilizará la CPU en un momento determinado.",
+                            "Answer3": "Parte del sistema operativo que hiberna procesos.",
+                            "Answer4": "Programa que se encarga de la optimización de la memoria usada por un proceso.",
+                            "CorrectAnswer": "2"
+                        }
+                    ]
+                },
+                {
+                    "image": "https://sistemasoperativosunivia.files.wordpress.com/2014/12/blog6.jpg?w=598&h=366",
+                    "title": "Dispositivos de entrada y salida",
+                    "desc": "Tipos y ejemplos",
+                    "quiz": [
+                        {
+                            "question": "¿Cual de los siguientes es un dispositivo de entrada?",
+                            "Answer1": "Monitor.",
+                            "Answer2": "Bocina.",
+                            "Answer3": "Teclado.",
+                            "Answer4": "Proyector.",
+                            "CorrectAnswer": ""
+                        },
+                        {
+                            "question": "¿Cual de los siguientes es un dispositivo de salida?",
+                            "Answer1": "Mouse.",
+                            "Answer2": "Micrófono.",
+                            "Answer3": "Teclado.",
+                            "Answer4": "Monitor.",
+                            "CorrectAnswer": "4"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Programación Orientada a Objetos",
+            "topics": [
+                {
+                    "image": "https://api.ed.team/public-files/bloginlineimg/4ed46a67-73ea-4a1a-bff7-128a85b36a22.png",
+                    "title": "POO: Conceptos básicos",
+                    "desc": "Definicion y características",
+                    "quiz": [
+                        {
+                            "question": "¿Que es la Programación Orientada a Objetos?",
+                            "Answer1": "Es un paradigma de la programación.",
+                            "Answer2": "Es un conjunto de lenguajes de programamción.",
+                            "Answer3": "Es un tipo de programas.",
+                            "Answer4": "Algoritmos aplicables a cualquier lenguaje.",
+                            "CorrectAnswer": "1"
+                        },
+                        {
+                            "question": "¿Que es la Programación Estructural?",
+                            "Answer1": "Conjunto de sintaxis usada en diversos lenguajes.",
+                            "Answer2": "Conjunto de programas creados con un fin.",
+                            "Answer3": "Conjunto de pasos finitos programables.",
+                            "Answer4": "Es un paradigma de la programación.",
+                            "CorrectAnswer": "4"
+                        }
+                    ]
+                },
+                {
+                    "image": "https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_960,h_580/https://www.tokioschool.com/wp-content/uploads/2019/12/programacion-orientada-a-objetos-960x580.jpg",
+                    "title": "Objetos: Conceptos basicos",
+                    "desc": "Definiciones básicas",
+                    "quiz": [
+                        {
+                            "question": "¿Que es un objeto?",
+                            "Answer1": "Bloque de código que ejecuta una acción.",
+                            "Answer2": "Modelo de programación.",
+                            "Answer3": "Es una cosa que consta de un estado y de un comportamiento.",
+                            "Answer4": "Funciónes de un programa.",
+                            "CorrectAnswer": "3"
+                        },
+                        {
+                            "question": "¿Que es un tipo de dato?",
+                            "Answer1": "Forma en que el programa hace operaciones con las variables.",
+                            "Answer2": "Forma en que el programa interpreta la información almacenada en una variable.",
+                            "Answer3": "Variables preestablecidas del sistema.",
+                            "Answer4": "Conjunto de variables usadas en un bloque de código.",
+                            "CorrectAnswer": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Fundamentos de Diseño Digital",
+            "topics": [
+                {
+                    "image": "https://www.tecnologia-informatica.com/wp-content/uploads/2018/02/que-es-el-sistema-binario-1.jpg",
+                    "title": "Sistemas numéricos",
+                    "desc": "Conversiones entre sistemas numéricos",
+                    "quiz": [
+                        {
+                            "question": "¿Cuanto es 39 en sistema binario?",
+                            "Answer1": "100111.",
+                            "Answer2": "101011.",
+                            "Answer3": "000111.",
+                            "Answer4": "011101.",
+                            "CorrectAnswer": "1"
+                        },
+                        {
+                            "question": "¿Cuanto es 89 en sistema hexadecimal?",
+                            "Answer1": "C0.",
+                            "Answer2": "2A.",
+                            "Answer3": "59.",
+                            "Answer4": "1F.",
+                            "CorrectAnswer": "3"
+                        }
+                    ]
+                },
+                {
+                    "image": "https://i2.wp.com/www.ingmecafenix.com/wp-content/uploads/2018/05/Compuertas-l%C3%B3gicas.jpg?w=600&ssl=1",
+                    "title": "Compuertas básicas",
+                    "desc": "Operaciones con compuertas",
+                    "quiz": [
+                        {
+                            "question": "¿Cuales son las compuertas básicas?",
+                            "Answer1": "AND, OR, NOT.",
+                            "Answer2": "AND, NAND, NOR.",
+                            "Answer3": "AND, OR, XOR.",
+                            "Answer4": "OR, NOT, XNOR.",
+                            "CorrectAnswer": "1"
+                        },
+                        {
+                            "question": "¿Cuales son las compuertas universales?",
+                            "Answer1": "XOR, XNOR.",
+                            "Answer2": "AND, OR, NOT.",
+                            "Answer3": "NAND, NOR.",
+                            "Answer4": "OR, XOR, XNOR.",
+                            "CorrectAnswer": "3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Fundamentos de Circuitos Electrónicos",
+            "topics": [
+                {
+                    "image": "https://www.dragiinfo.com/wp-content/uploads/2019/07/resistencia-electrica-68k-ohm-14-w-1.jpg",
+                    "title": "Arreglos de resistencias",
+                    "desc": "Definiciones y conceptos básicos",
+                    "quiz": [
+                        {
+                            "question": "¿Que es una resistencia?",
+                            "Answer1": "Tipo de componente que acelera el flujo de electricidad.",
+                            "Answer2": "Componente electrico pasivo que impide el flujo de corriente.",
+                            "Answer3": "Componente electrico que condensa la energía.",
+                            "Answer4": "Tipo de circuito que disminuye el voltaje.",
+                            "CorrectAnswer": "2"
+                        },
+                        {
+                            "question": "¿Que es un arreglo de resistencias?",
+                            "Answer1": "Circuito electrico capaz de modificar la corriente que circula por el.",
+                            "Answer2": "Tipo de resistencia que es variable.",
+                            "Answer3": "Circuito armado con el fin de controlar un dispositivo.",
+                            "Answer4": "Conjunto de resistencias interconectadas para obtener un valor no comercial.",
+                            "CorrectAnswer": "4"
+                        }
+                    ]
+                },
+                {
+                    "image": "https://comofunciona.co.com/wp-content/uploads/2016/09/Capacitor.jpg",
+                    "title": "Arreglos de capacitores",
+                    "desc": "Definiciones y conceptos básicos",
+                    "quiz": [
+                        {
+                            "question": "¿Que es un capacitor?",
+                            "Answer1": "Componente eléctrico capaz de condensar la electricidad.",
+                            "Answer2": "Componente electrico que reduce el paso de la corriente electrica.",
+                            "Answer3": "Circuito electrico capaz de controlar el voltaje.",
+                            "Answer4": "Componente que almacena energia electrica.",
+                            "CorrectAnswer": "1"
+                        },
+                        {
+                            "question": "¿Que es un arreglo de capacitores?",
+                            "Answer1": "Capacitor variable controlado por la corriente.",
+                            "Answer2": "Conjunto de capacitores interconectados para obtener un valor no comercial.",
+                            "Answer3": "Conjunto de capacitores que modulan la corriente de un circuito.",
+                            "Answer4": "Circuito capaz de nodificar la señal ingresada.",
+                            "CorrectAnswer": "2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "subject": "Diseño de Sistemas Digitales",
+            "topics": [
+                {
+                    "image": "http://homepage.cem.itesm.mx/pchavez/material/arqui/Modulos/ModuloVICircuitosSecuenciales/MaterialCircuitosSecuenciales/FlipFlops/FlipFl11.jpg",
+                    "title": "Flip-Flops",
+                    "desc": "Definición y tipos",
+                    "quiz": [
+                        {
+                            "question": "¿Que es un FLipFlop?",
+                            "Answer1": "Dispositivo digital mas básico que posee memoria.",
+                            "Answer2": "Circuito controlado por un pulso de reloj.",
+                            "Answer3": "Tipo de circuito capaz de modificar la señal de reloj de entrada.",
+                            "Answer4": "Dispositivo electronico que controla las salidas a traves de sus entradas.",
+                            "CorrectAnswer": "1"
+                        },
+                        {
+                            "question": "¿Que tipos de FlipFlops existen?",
+                            "Answer1": "En serie y Paralelos.",
+                            "Answer2": "Asincronos y Sincronos.",
+                            "Answer3": "Secuenciales y Combinatorios.",
+                            "Answer4": "Lineales y Secuenciales.",
+                            "CorrectAnswer": "1"
+                        }
+                    ]
+                },
+                {
+                    "image": "http://www.electronica2000.com/wp-content/uploads/2019/12/contdecodif.png",
+                    "title": "Circuitos Contadores",
+                    "desc": "Definición y tipos",
+                    "quiz": [
+                        {
+                            "question": "¿Que es un Circuito Contador?",
+                            "Answer1": "Circuito digital que permite la moduación de la salida a traves de la entrada y la salida del estado anterior.",
+                            "Answer2": "Dispositivo digital que genera una señal analógica dependiendo de su entrada.",
+                            "Answer3": "Dispositivo digital que genera una señal que varia con el tiempo.",
+                            "Answer4": "Dispositivo que genera una serie de combinaciones a sus salidas sincronizadas por una señal de reloj externa.",
+                            "CorrectAnswer": "4"
+                        },
+                        {
+                            "question": "¿Que tipos de Circuitos Contadores existen?",
+                            "Answer1": "En serie y en paralelo.",
+                            "Answer2": "Sincronos y Lineales.",
+                            "Answer3": "Asincronos y Sincronos.",
+                            "Answer4": "Asincronos y de Decada.",
+                            "CorrectAnswer": "3"
+                        }
+                    ]
                 }
             ]
         }
