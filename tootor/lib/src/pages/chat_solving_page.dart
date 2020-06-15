@@ -48,7 +48,7 @@ class _ChatSolvingState extends State<ChatSolving> {
     getCurrentEmail();
     return Scaffold(
         appBar: AppBar(
-          title: Center(child: Text("Resolviendo duda")),
+          title: Center(child: Text("Chat")),
         ),
         body: SafeArea(
           child: Column(

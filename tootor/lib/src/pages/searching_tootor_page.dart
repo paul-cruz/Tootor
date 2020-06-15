@@ -2,21 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 import 'package:tootor/src/pages/index.dart';
 import 'package:tootor/src/pages/chat_solving_page.dart';
-class SearchingTootorPage extends StatelessWidget{
-
-  Future<void> tempo(context) async{
-    await Future.delayed(Duration(seconds: 10));
-    if(this.funcion == "ayudarte por chat"){
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context)=>ChatSolving()));
-    }else
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context)=>IndexPage()));
-  }
+class SearchingTootorPage extends StatefulWidget{
 
   String funcion;
   double _fontSize;
+  bool wait;
   SearchingTootorPage({this.funcion}){
     this._fontSize = 20;
+    wait=true;
+  }
 
+  @override
+  _SearchingTootorPageState createState() => _SearchingTootorPageState();
+}
+
+class _SearchingTootorPageState extends State<SearchingTootorPage> {
+  Future<void> tempo(context) async{
+    await Future.delayed(Duration(seconds: 3));
+    if(widget.wait) {
+      if (this.widget.funcion == "ayudarte por chat") {
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => ChatSolving()));
+      } else
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => IndexPage()));
+    }
   }
 
   @override
@@ -53,9 +63,9 @@ class SearchingTootorPage extends StatelessWidget{
               Expanded(
                 flex: 2,
                 child: Text(
-                    "Buscando usuarios con las habilidades necesarias para ${this.funcion}.",
+                    "Buscando usuarios con las habilidades necesarias para ${this.widget.funcion}.",
                     style: TextStyle(
-                        fontSize: this._fontSize
+                        fontSize: this.widget._fontSize
                     )
                 ),
               ),
@@ -67,7 +77,10 @@ class SearchingTootorPage extends StatelessWidget{
                   children: [
                     OutlineButton(
                       onPressed: () {
-                        Navigator.of(context).pop();
+                        setState(() {
+                          widget.wait = false;
+                        });
+                        Navigator.of(context).pushReplacementNamed('/home');
                       },
                       borderSide: BorderSide(
                           color: CustomColors.font_gray,
@@ -76,7 +89,7 @@ class SearchingTootorPage extends StatelessWidget{
                       child: Text(
                         'Cancelar',
                         style: TextStyle(
-                            fontSize: this._fontSize,
+                            fontSize: this.widget._fontSize,
                             color: CustomColors.font_gray
                         ),
                       ),
