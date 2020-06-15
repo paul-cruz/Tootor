@@ -58,7 +58,8 @@ class AskAddAbilities extends StatelessWidget {
                     OutlineButton(
                       child: Text("Omitir"),
                       onPressed: (){
-
+                        Navigator.of(context).pop();
+                        Navigator.of(context).pushReplacementNamed('/home');
                       },
                     )
                   ],

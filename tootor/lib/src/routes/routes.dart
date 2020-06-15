@@ -20,9 +20,6 @@ import 'package:tootor/src/pages/upload_photo_page.dart';
 import 'package:tootor/src/pages/ask_add_abilities.dart';
 import 'package:tootor/src/pages/add_abilities.dart';
 import 'package:tootor/src/pages/select_hability_page.dart';
-import '../pages/add_abilities.dart';
-import '../pages/ask_add_abilities.dart';
-import '../pages/select_hability_page.dart';
 
 Map<String, WidgetBuilder> buildAppRoutes() {
   return <String, WidgetBuilder>{

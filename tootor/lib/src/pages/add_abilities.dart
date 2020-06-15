@@ -91,13 +91,16 @@ class _AddAbilitiesState extends State<AddAbilities> {
                   OutlineButton(
                     child: Text("Cancelar"),
                     onPressed: (){
-
+                      Navigator.of(context).pop();
+                      Navigator.of(context).pushReplacementNamed('/home');
                     },
                   ),
                   FlatButton(
-                    onPressed: (){
+                    onPressed: this._abilities.length>0?(){
                       //TODO: save list
-                    },
+                      Navigator.of(context).pop();
+                      Navigator.of(context).pushReplacementNamed('/signup/end');
+                    }:null,
                     child: Text("Finalizar", style: TextStyle(color: Colors.white),),
                     color: CustomColors.secondary,
                   )
