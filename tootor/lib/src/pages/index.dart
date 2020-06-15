@@ -48,6 +48,7 @@ class IndexState extends State<IndexPage> {
                 child:CircularProgressIndicator(),
               ),
               Padding(
+
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 child: Row(
                   children: <Widget>[
