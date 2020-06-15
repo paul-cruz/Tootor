@@ -34,6 +34,61 @@
                     "desc": "You are given an array and you need to find number of tripets of indices (i,j,k) such that the elements at those indices are in geometric progression for a given common ratio r and i<j<k."
                 }
             ]
+        },
+        {
+            "subject": "Strings and Substrings",
+            "topics": [
+                {
+                    "image": "https://www.mentoringit.com.mx/uploads/tutorial/62/068776b8036e4a758d3cf490d76ff352.jpg",
+                    "title": "Substrings",
+                    "desc": "Given a string, s, and two indices, 'start' and 'end', print a substring consisting of all characters in the inclusive range from 'start' to 'end'-1."
+                },
+                {
+                    "image": "https://www.definicionabc.com/wp-content/uploads/2014/11/Anagrama.jpg",
+                    "title": "Anagrams",
+                    "desc": "You are given two strings (a,b). If and are case-insensitive anagrams, print 'Anagrams'; otherwise, print 'Not Anagrams' instead."
+                }
+            ]
+        },
+        {
+            "subject": "Method Overriding",
+            "topics": [
+                {
+                    "image": "https://www.geeksforgeeks.org/wp-content/uploads/overriding-in-java.png",
+                    "title": "Method Overriding 1",
+                    "desc": "Complete the code in your editor by writing an overridden getNumberOfTeamMembers method that prints the same statement as the superclass' getNumberOfTeamMembers method, except that it replaces n with 11 (the number of players on a Soccer team). "
+                }
+            ]
+        },
+        {
+            "subject": "Time and date",
+            "topics": [
+                {
+                    "image": "https://s3-us-west-2.amazonaws.com/melingoimages/Images/12944.jpg",
+                    "title": "Calendar Module",
+                    "desc": "You are given a date. Your task is to find what the day is on that date."
+                },
+                {
+                    "image": "https://www.softzone.es/app/uploads-softzone.es/2018/02/calendar.jpg",
+                    "title": "Date and Time",
+                    "desc": "You are given a date. You just need to write the method, which returns the day on that date."
+                }
+            ]
+        },
+        {
+            "subject": "XML",
+            "topics": [
+                {
+                    "image": "https://blogredalyc.files.wordpress.com/2016/07/unknown.jpg?w=225",
+                    "title": "Find the Score",
+                    "desc": "You are given a valid XML document, and you have to print its score. The score is calculated by the sum of the score of each element. For any element, the score is equal to the number of attributes it has."
+                },
+                {
+                    "image": "https://static.vecteezy.com/system/resources/previews/000/375/973/non_2x/xml-vector-icon.jpg",
+                    "title": "Find the Maximum Depth",
+                    "desc": "You are given a valid XML document, and you have to print the maximum level of nesting in it. Take the depth of the root as 0."
+                }
+            ]
         }
     ]
 }
