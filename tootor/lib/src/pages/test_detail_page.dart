@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tootor/src/pages/quiz_page.dart';
 import 'package:tootor/src/pages/test_page.dart';
 import 'package:tootor/src/utils/customized_colors.dart';
 
@@ -10,51 +11,58 @@ class TestDetailPage extends StatefulWidget {
 }
 
 class _TestDetailPageState extends State<TestDetailPage> {
-
   Widget _buildCard(Map item) {
     return Card(
       elevation: 4.0,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(
-                    item['image'],
-                  ),
-                  fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(
-                    Colors.black26,
-                    BlendMode.darken,
-                  ),
-                ),
-                color: CustomColors.light_gray,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Align(
-                      alignment: Alignment.topLeft,
+      child: InkWell(
+        onTap: () {
+          Navigator.of(context).pushNamed(
+            '/test/detail/quiz',
+            arguments: QuizData(title: item['title'], quiz: item['quiz']),
+          );
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(
+                      item['image'],
+                    ),
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                      Colors.black26,
+                      BlendMode.darken,
                     ),
                   ),
-                ],
+                  color: CustomColors.light_gray,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          ListTile(
-            title: Text(item['title']),
-            subtitle: Text(
-              item['desc'],
-              overflow: TextOverflow.ellipsis,
+            ListTile(
+              title: Text(item['title']),
+              subtitle: Text(
+                item['desc'],
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

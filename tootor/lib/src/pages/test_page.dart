@@ -82,7 +82,6 @@ class _TestPageState extends State<TestPage> {
   }
 
   List<Widget> _listItems(List<dynamic> data, BuildContext context) {
-    //print(data);
     final List<Widget> options = [];
     data.forEach((item) {
       final tempWidget = Container(
@@ -98,8 +97,6 @@ class _TestPageState extends State<TestPage> {
                 '/test/detail',
                 arguments: TestData(subject: item['subject'], options: item['topics']),
               );
-              // final route = MaterialPageRoute(builder: (context) => AlertPage());
-              // Navigator.push(context, route);
             },
           ));
       options..add(tempWidget)..add(_buildCardListView(item['topics']));
@@ -108,12 +105,6 @@ class _TestPageState extends State<TestPage> {
   }
 
   Widget _buildListView() {
-    /*testProvider.loadData().then((options) {
-        for (var cards in options) {
-          print(cards);
-        }
-        }
-    );*/
     return FutureBuilder(
       future: testProvider.loadData(),
       initialData: [],
