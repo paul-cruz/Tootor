@@ -68,7 +68,7 @@ class _UploadImagePageState extends State<UploadImagePage> {
                     onPressed: _continue,
                     textColor: Colors.black,
                     color: CustomColors.light_gray,
-                    child: const Text('Omitr', style: TextStyle(fontSize: 20)),
+                    child: const Text('Omitir', style: TextStyle(fontSize: 20)),
                   ),
                 ),
                 Padding(
