@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tootor/src/pages/forgot_password.dart';
 import 'package:tootor/src/pages/interview_detail_page.dart';
 import 'package:tootor/src/pages/main_navegation_page.dart';
+import 'package:tootor/src/pages/quiz_page.dart';
 import 'package:tootor/src/pages/signin_page.dart';
 import 'package:tootor/src/pages/signup_end.dart.dart';
 import 'package:tootor/src/pages/signup_page.dart';
@@ -27,6 +28,7 @@ Map<String, WidgetBuilder> buildAppRoutes() {
     '/signup': (BuildContext context) => SignUpPage(),
     '/signup/end': (BuildContext context) => SignUpEndPage(),
     '/test/detail': (BuildContext context) => TestDetailPage(),
+    '/test/detail/quiz': (BuildContext context) => QuizPage(),
     '/uploadphoto': (BuildContext context) => UploadImagePage(),
     '/interview/detail': (BuildContext context) => InterviewDetailPage(),
     '/home': (BuildContext context) => MainNavegation(),

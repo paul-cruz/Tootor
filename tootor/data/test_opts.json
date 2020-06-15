@@ -6,7 +6,25 @@
                 {
                     "image": "https://lenguajesyautomatasblog.files.wordpress.com/2017/02/cropped-banner-autc3b3matas11.png",
                     "title": "Conceptos Basicos",
-                    "desc": "Definicion de alfabetos, cadenas, prefijos y sufijos, operaciones con lenguajes"
+                    "desc": "Definicion de alfabetos, cadenas, prefijos y sufijos, operaciones con lenguajes",
+                    "quiz": [
+                        {
+                            "question": "¿Que es un alfabeto?",
+                            "Answer1": "un conjunto finito, no vacío, cuyos elementos se denominan 'palabras' o 'letras'",
+                            "Answer2": "un conjunto finito, no vacío, cuyos elementos se denominan 'letras' o 'símbolos'",
+                            "Answer3": "un conjunto finito, no vacío, cuyos elementos se denominan 'símbolos' o 'palabras'",
+                            "Answer4": "un conjunto finito, no vacío, cuyos elementos se denominan 'automatas' o 'maquinas automáticas'",
+                            "CorrectAnswer": "2"
+                        },
+                        {
+                            "question": "¿Que es una palabra?",
+                            "Answer1": "Secuencia finita de símbolos o letras seleccionados de algún alfabeto.",
+                            "Answer2": "Secuencia infinita de símbolos o letras seleccionados de algún alfabeto.",
+                            "Answer3": "Secuencia finita de símbolos y letras seleccionados de algún alfabeto.",
+                            "Answer4": "Secuencia finita de símbolos o letras seleccionados de algún diccionario.",
+                            "CorrectAnswer": "1"
+                        }
+                    ]
                 },
                 {
                     "image": "https://us.123rf.com/450wm/asmati/asmati1711/asmati171101496/89916622-ilustraci%C3%B3n-de-signo-de-cubo-de-abc-vector-icono-blanco-del-contorno-en-c%C3%ADrculo-cer%C3%BAleo-oscuro-en-el-fondo-bl.jpg?ver=6",
