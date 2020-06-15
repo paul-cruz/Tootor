@@ -118,6 +118,7 @@ class HelpRequestedPage extends StatelessWidget {
               ),
             )
           ],
+
         ),
       ),
     );

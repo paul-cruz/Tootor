@@ -167,6 +167,7 @@ class SendButton extends StatelessWidget{
   }
 }
 
+
 class Message extends StatelessWidget {
   final String from;
   final String text;
